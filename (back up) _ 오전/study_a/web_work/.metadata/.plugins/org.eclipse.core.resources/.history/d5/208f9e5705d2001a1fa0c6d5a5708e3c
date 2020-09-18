@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_var</title>
+</head>
+<body>
+<h1>02_var</h1>
+<script>
+	var a = 10, b= 20
+	document.write('결과:'+a+b)
+
+
+</script>
+</body>
+</html>

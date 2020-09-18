@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" 
+content="width=device-width, initial-scale=1.0, user-scalable=no, 
+minimum-scale=1.0, maximum-scale=1.0">
+<title>01_react</title>
+<style>
+
+	*{
+		margin:0;
+		padding:0;
+	}
+	/* 테블릿 */
+	.wrapper{
+		width:600px;
+		height: 460px;
+		background: #ff0;
+		
+	}
+	.wrapper > div{
+		width:250px;
+		height: 100px;
+		background: #f00;
+		margin: 20px;
+		float: left;
+		
+	}
+	/* 핸드폰 */
+	@media screen and (max-width:480px){
+		.wrapper{
+			background: #0f0;
+			width:300px;
+			height: 880px;
+		}
+	
+	}
+	
+	/* 데스크탑 */
+	@media screen and (min-width:1200px){
+		.wrapper{
+			background: #0ff;
+			width:900px;
+			height: 320px;
+		}
+	
+	}
+	
+	
+</style>
+</head>
+<body>
+<h1>01_react</h1>
+<div class="wrapper">
+	wrapper이여<br>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+</body>
+</html>

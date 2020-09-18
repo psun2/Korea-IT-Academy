@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_basic</title>
+</head>
+<body>
+<h1>01_basic</h1>
+<script>
+
+function fn_1(a,b){
+	document.write(" fn_1 실행:"+(a%b)+"<br>")
+	return 100
+}
+
+//alert("경고\t창\n입니다.")
+//var ii = prompt("1+1 ?")
+
+
+//var ii = confirm("저장하시겠습니까?")
+//document.write("ii:"+ii+"<br>")
+
+var a = "2+3*4"
+document.write("a:"+a+"<br>")
+document.write("a:"+eval(a)+"<br>")
+document.write(eval("fn_1(15,9)")+"<br>")
+
+
+var b = "1234"
+document.write(parseInt(b)+100+"<br>")
+document.write(parseInt("123.456")+100+"<br>")
+document.write(parseFloat("123.456")+100+"<br>")
+
+document.write(isNaN("asdfasf")+"<br>")
+document.write(isNaN(1234)+"<br>")
+document.write(isNaN("4567")+"<br>")
+document.write(isNaN(true)+"<br>")
+document.write(isNaN(false)+"<br>")
+document.write(isNaN("1234asdf")+"<br>")
+document.write(isNaN("100+200")+"<br>")
+
+function aaa(){
+	//document.write("3초 뒤에 출력할껄?");
+	alert("3초 뒤에 출력할껄?");
+}
+
+//aaa();
+//setTimeout(aaa,3000)
+/*
+setTimeout(
+		function(){
+			alert("호출이요")
+		},3000)
+*/
+var i = 0
+
+function bbb(){
+	document.write(i+"<br>")
+	i++
+}
+function stopGo(){
+	alert('멈추는 구마')
+	clearInterval(gogo)
+}
+
+var gogo
+//setInterval(bbb,1000)
+function startGo(){
+	alert('늘렀구마2')
+	gogo = setInterval(bbb,1000)
+	//setInterval의 정보를  gogo가 받음
+	document.write('<input type="button" value="멈춤" onclick="stopGo()"/><br>')
+}
+</script>
+
+<input type="button" value="시작" onclick="startGo()" />
+
+
+</body>
+</html>

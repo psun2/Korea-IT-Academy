@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_dom</title>
+<style>
+	#con{
+		border: 1px solid #000;
+		margin: 20px;
+		padding: 10px;
+	}
+	
+	.box1{
+		background: #ff0;
+	}
+	
+	.box2{
+		background: #0f0;
+	}
+	.box3{
+		background: #f0f;
+	}
+
+</style>
+<script>
+	window.onload = function(){  //함수의 재정의
+		
+		function log(msg){  //함수 안에 함수 정의 가능
+			var con = document.getElementById("con")
+			con.innerHTML += msg+"<br>"
+		}
+	
+	
+		var root = document.documentElement
+		
+		//console.log(root)
+		log(root.tagName)
+		
+		var bo = document.getElementsByTagName("body")
+		log(bo.length)
+		log(bo[0])
+		log(bo[0].tagName)
+		log(bo.item(0))
+		log(bo.item(0).tagName)
+		
+		var sp = document.getElementsByTagName("span") 
+		for (var i = 0; i < sp.length; i++) {
+			log(sp[i].getAttribute("knn"))
+		}
+		
+		for (var i = 0; i < sp.length; i++) {
+			log(sp[i].innerHTML)
+		}
+		
+		sp[1].setAttribute("knn","송동규")
+		sp[1].setAttribute("class","box2")
+		sp[1].innerHTML = "아침에 하냐"
+		sp[2].innerHTML += " 밖하냐"
+		
+		var yy = document.getElementsByClassName("yy")
+		for (var i = 0; i < yy.length; i++) {
+			log("yy["+i+"]"+ yy[i].innerHTML)
+		}
+		yy[0].innerHTML = "yy 0 번 이지"
+		
+		var aa = document.getElementById("a")
+		log(aa.innerHTML)
+		var cc = document.getElementById("c")
+		log(cc.innerHTML)
+		//console.log(cc.length)
+		//console.log(cc[0].innerHTML)
+		
+		cc.setAttribute("class","box3")
+		log("----------------------------------")
+		var dd = document.getElementsByTagName("div")[0]
+		var dd_span = dd.getElementsByTagName("span")
+		log(dd_span.length)
+		log(dd_span[0].innerHTML)
+		var new_item = document.createElement("div")
+		new_item.setAttribute("class","box2")
+		new_item.innerHTML = "새로 만들었어요"
+		dd.appendChild(new_item)  //node 추가
+		
+		dd.removeChild(dd_span[0])   //node 제거
+	}
+</script>
+
+
+</head>
+<body>
+<h1>01_dom</h1>
+<span id="a" knn="이정민" class="box1">헬스하냐?</span>
+<p>
+	<span  id="b" knn="이승원" class="box1">너두하냐?</span>
+</p>
+<div>
+	<p>문단</p>
+	<span  id="c" knn="차윤호" class="box1">안하냐?</span>
+	<div class="yy"  onn="박성훈" >나두하자</div>
+</div>
+<p  class="yy" >나는 놀아</p>
+<p  class="box1" id="c">나는 두번째 c 야</p>
+<div id="con"></div>
+
+
+</body>
+</html>
+
+
+
+

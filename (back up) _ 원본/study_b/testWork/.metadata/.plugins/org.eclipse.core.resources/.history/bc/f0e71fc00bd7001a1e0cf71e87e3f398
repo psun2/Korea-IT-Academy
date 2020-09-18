@@ -1,0 +1,6 @@
+package jdbc_p;
+
+public class MajorDTO {
+
+	public String id, name;
+}

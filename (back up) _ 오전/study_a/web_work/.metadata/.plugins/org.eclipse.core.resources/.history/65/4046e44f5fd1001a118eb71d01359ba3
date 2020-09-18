@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_react</title>
+<style>
+	.wrapper{
+		width:500px;
+		height: 500px;
+		background: #ff0;
+	
+	}
+</style>
+</head>
+<body>
+<h1>01_react</h1>
+<div class="wrapper">
+wrapper이여
+</div>
+</body>
+</html>

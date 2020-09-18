@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_dom</title>
+<style>
+	#con{
+		border: 1px solid #000;
+		margin: 20px;
+		padding: 10px;
+	}
+	
+	.box1{
+		background: #ff0;
+	}
+	
+	.box2{
+		background: #0f0;
+	}
+
+</style>
+</head>
+<body>
+<h1>01_dom</h1>
+<span id="a" knn="이정민" class="box1">헬스하냐?</span>
+<p>
+	<span  id="b" knn="이승원" class="box1">너두하냐?</span>
+</p>
+<div>
+	<p>문단</p>
+	<span  id="c" knn="차윤호" class="box1">안하냐?</span>
+	<div class="yy" id="c" onn="박성훈">나두하자</div>
+</div>
+
+<div id="con"></div>
+<script>
+	var root = document.documentElement
+	
+	//console.log(root)
+	console.log(root.tagName)
+	
+	var bo = document.getElementsByTagName("body")
+	console.log(bo.length)
+	console.log(bo[0])
+	console.log(bo[0].tagName)
+	console.log(bo.item(0))
+	console.log(bo.item(0).tagName)
+	
+	var sp = document.getElementsByTagName("span") 
+	for (var i = 0; i < sp.length; i++) {
+		console.log(sp[i].getAttribute("knn"))
+	}
+	
+	for (var i = 0; i < sp.length; i++) {
+		console.log(sp[i].innerHTML)
+	}
+	
+	sp[1].setAttribute("knn","송동규")
+	sp[1].setAttribute("class","box2")
+	sp[1].innerHTML = "아침에 하냐"
+	sp[2].innerHTML += " 밖하냐"
+</script>
+
+</body>
+</html>

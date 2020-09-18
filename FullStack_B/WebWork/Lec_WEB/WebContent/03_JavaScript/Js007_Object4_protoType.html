@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Object</title>
+  </head>
+  <body>
+    <h2>JavaScript object ProtoType</h2>
+
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.eyes = 2;
+        this.print = function () {
+          console.log(
+            '이름: ',
+            this.name,
+            ', 나이: ',
+            this.age,
+            ', 눈: ',
+            this.eyes,
+          );
+        };
+      }
+
+      var kim = new Person('김씨', 12);
+      var park = new Person('박씨', 38);
+
+      console.log(kim);
+      // Person {name: "김씨", age: 12, eyes: 2, print: function (), constructor: Object}
+      console.log(park);
+      // Person {name: "박씨", age: 38, eyes: 2, print: function (), constructor: Object}
+
+      kim.print();
+      park.print();
+
+      console.log(Person.prototype);
+      // Object {}
+      console.log(
+        '--------------------------------------------------------------------------',
+      );
+      // Person 객체를 100 개 만들면 속성 (데이터)가 400개가 생긴다.
+      // 그런데.. print() 와 eyes 가 굳이 여러개 생성될 필요가 있나?
+      console.log(
+        'Person 객체를 100 개 만들면 속성 (데이터)가 400개가 생긴다.',
+      );
+      console.log(
+        '그런데.. print() 와 eyes 가 굳이 여러개 생성될 필요가 있나?',
+      );
+
+      function Person2(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      console.log(Person2.prototype.sharedValue);
+      Person2.prototype.sharedValue = 1;
+      console.log(Person2.prototype.sharedValue);
+
+      Person2.prototype.eyes = 2;
+      Person2.prototype.print = function () {
+        console.log(
+          '이름: ',
+          this.name,
+          ', 나이: ',
+          this.age,
+          ', 눈: ',
+          this.eyes,
+        );
+      };
+
+      var kim = new Person2('김씨', 12);
+      var park = new Person2('박씨', 38);
+
+      console.log(kim);
+      // Person2 {name: "김씨", age: 12, constructor: Object}
+      console.log(park);
+      // Person2 {name: "박씨", age: 38, constructor: Object}
+
+      kim.print();
+      park.print();
+      // 객체를 찍어 보았을때, 인자로 가지고 있지 않지만 print 함수 사용 이 가능합니다.
+
+      console.log(Person2.prototype);
+      // Object {sharedValue: 1, eyes: 2, print: function ()}
+
+      console.log(kim.eyes, kim.print);
+      // 2 function () {}
+      console.log(park.eyes, park.print);
+      // 2 function () {}
+    </script>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>

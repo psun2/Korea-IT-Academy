@@ -1,0 +1,119 @@
+package kjy;
+
+
+//자동차 성능 테스트 클래스를 구현하세요
+
+
+/*
+부모클래스 : 자동차 - 차종, 점수
+
+  
+
+자식클래스 :      모든 점수는 100점 기준
+
+스포츠카   -- 속도  60, 연비 40     :::::>    속도 80,  연비   70  ==>   80*0.6 +  70*0.4  
+
+      승합차 -- 연비 30, 탑승인원 30, 안정성 40
+
+      트럭    -- 연비 50, 적재량 50, 화물종류(갯수마다 1점)
+
+*/
+abstract class DyCar{
+	String name;
+	int res;
+	
+	public DyCar(String name) {
+	
+		this.name = name;
+		
+	}
+	
+	
+	abstract void calc();
+	
+	void ppp() {
+		
+		calc();
+		String ttt = name+"\t"+res;
+		
+		System.out.println(ttt);
+	}
+}
+
+class DySports extends DyCar{
+	int [] jum;
+	DySports(int speed , int fuel, int design) {
+		super("스포츠카");
+		jum = new int[] {speed , fuel, design};
+	}
+	void calc() {
+		double [] rate = {0.5,0.3,0.2};
+		
+		res = 0;
+		
+		for (int i = 0; i < rate.length; i++) {
+			res += rate[i]*jum[i];
+		}
+	}
+}
+
+class DyTruck extends DyCar{
+	int [] jum;
+	String [] pp;
+	DyTruck(int fuel, int loadage, String ...pp) {
+		super("트럭"  );
+		jum = new int[] {fuel, loadage};
+		this.pp = pp;
+	}
+	void calc() {
+		double [] rate = {0.6,0.4};
+		
+		res = 0;
+		
+		for (int i = 0; i < rate.length; i++) {
+			res += rate[i]*jum[i];
+		}
+		res+= pp.length;
+	}
+}
+
+class DyVan extends DyCar{
+	int [] jum;
+	DyVan(int speed , int fuel, int cnt) {
+		super("승합차");
+		jum = new int[] {speed, fuel,  cnt};
+	}
+	void calc() {
+		double [] rate = {0.15,0.35,0.5};
+		
+		res = 0;
+		
+		for (int i = 0; i < rate.length; i++) {
+			res += rate[i]*jum[i];
+		}
+	}
+}
+
+
+
+public class DyCarMain {
+
+	public static void main(String[] args) {
+		DyCar [] cars = {
+				new DySports(60, 90, 91),
+				new DyTruck(40, 90,"철근"),
+				new DyVan(60, 90, 91),
+				new DySports(90, 60, 51),
+				new DyVan(90, 60, 51),
+				new DyTruck(70, 50,"물","기름"),
+				new DyTruck(70, 50,"나무")
+				
+		};
+		
+		for (DyCar car : cars) {
+			car.ppp();
+		}
+
+	}
+
+}

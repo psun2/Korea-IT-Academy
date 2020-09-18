@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_switch</title>
+</head>
+<body>
+<h1>06_switch</h1>
+<script>
+
+	switch(789){
+		case 5:
+			document.write('5 인가')
+			break
+		case 10:
+			document.write('10 인가')
+			break
+		case 5:
+			document.write('5 이지롱')
+			break
+		case 10:
+			document.write('10 이지롱')
+			break
+		case true:
+			document.write('참 인가')
+			break
+		case 123.456:
+			document.write('소숫점 인가')
+			break
+		case '졸려':
+			document.write('졸림 인가')
+			break
+		default:
+			document.write('기본값 인가')
+			break
+	
+	}
+	
+	/* 
+		switch 사용하여
+		회원 학년이 1,4학년 : son_1
+		회원 학년이 2,6학년 : son_2
+		회원 학년이 3,5학년 : son_3
+		를 출력하세요
+	*/
+	
+	var year = 1
+	var ff
+	switch(year){
+	
+		case 1:
+		case 4:
+			ff = '1.jpeg'
+			break
+		case 2:
+		case 6:
+			ff = '2.bmp'
+			break
+		case 3:
+		case 5:
+			ff = '3.png'
+			break
+	}
+	
+	var img = '../fff/son'+ff
+	
+
+</script>
+
+	<img src="<script>img</script>" alt="" />
+</body>
+</html>

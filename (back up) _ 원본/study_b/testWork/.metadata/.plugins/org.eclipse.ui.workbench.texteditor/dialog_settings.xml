@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="major"/>
+		<list key="findhistory">
+			<item value="member"/>
+			<item value="MemDTO"/>
+			<item value="dos.write"/>
+			<item value="tab.addTab(&quot;국어&quot;, kor);"/>
+			<item value="setVisible(true);"/>
+			<item value="ee[i].add(&quot;영어&quot;,"/>
+			<item value="me[i].add(&quot;영어&quot;,"/>
+			<item value="me[i].add(&quot;수학&quot;,"/>
+			<item value="ke[i].add(&quot;국어&quot;,"/>
+			<item value="),"/>
+			<item value="&quot;O&quot;,"/>
+			<item value="&quot;x&quot;,"/>
+			<item value="&quot;하&quot;"/>
+			<item value="&quot;중&quot;"/>
+			<item value="&quot;상&quot;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="major"/>
+			<item value="MajorDTO"/>
+			<item value="System.out.println(dis.read"/>
+			<item value="map.get(&quot;영어&quot;).add("/>
+			<item value="map.get(&quot;수학&quot;).add("/>
+			<item value="map.get(&quot;국어&quot;).add("/>
+			<item value=",Freq.),"/>
+			<item value="Freq.),"/>
+			<item value=""/>
+			<item value="Impo.Low"/>
+			<item value="Impo.Middle"/>
+			<item value="Impo.High"/>
+			<item value="&quot;상&quot;"/>
+			<item value="),"/>
+			<item value="new Bag"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="778"/>
+		<item key="DIALOG_Y_ORIGIN" value="130"/>
+		<item key="DIALOG_WIDTH" value="288"/>
+		<item key="DIALOG_HEIGHT" value="368"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

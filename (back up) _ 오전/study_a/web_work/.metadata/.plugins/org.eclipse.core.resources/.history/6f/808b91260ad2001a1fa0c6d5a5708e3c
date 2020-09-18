@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_var</title>
+</head>
+<body>
+<h1>02_var</h1>
+<script>
+	var a = 10, b= 20
+	document.write('결과:'+(a+b))
+	
+	var name = '정우성'
+	var kor = 88, eng = 87, mat = 72
+	var tot = kor + eng + mat
+	var avg = tot / 3
+	
+	var ttt = '<table  border="">'
+	ttt+='<tr><td>이름</td><td>'+name+'</td></tr>'
+	ttt+='</table>'
+	
+	document.write('<br>이름:'+name)
+	document.write('<br>국어:'+kor)
+	document.write('<br>영어:'+eng)
+	document.write('<br>수학:'+mat)
+	document.write('<br>총점:'+tot)
+	document.write('<br>평균:'+avg)
+	
+</script>
+
+<table border="">
+	<tr>
+		<td>이름</td>
+		<td><script>document.write(name)</script></td>
+	</tr>
+	<tr>
+		<td>국어</td>
+		<td><script>document.write(kor)</script></td>
+	</tr>
+	<tr>
+		<td>영어</td>
+		<td><script>document.write(eng)</script></td>
+	</tr>
+	<tr>
+		<td>수학</td>
+		<td><script>document.write(mat)</script></td>
+	</tr>
+	<tr>
+		<td>총점</td>
+		<td><script>document.write(tot)</script></td>
+	</tr>
+	<tr>
+		<td>평균</td>
+		<td><script>document.write(avg)</script></td>
+	</tr>
+</table>
+<script>
+
+	document.write(ttt)
+</script>
+
+
+
+
+
+</body>
+</html>

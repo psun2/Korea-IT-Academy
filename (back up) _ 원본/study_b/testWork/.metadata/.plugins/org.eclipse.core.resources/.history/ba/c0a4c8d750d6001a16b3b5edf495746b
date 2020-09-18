@@ -1,0 +1,42 @@
+package excel_p;
+
+import java.io.File;
+
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
+
+public class ReadMain {
+
+	public static void main(String[] args) {
+		try {
+			Workbook wb = Workbook.getWorkbook(new File("fff/www.xls"));
+			
+			System.out.println(wb.getNumberOfSheets());
+			
+			Sheet [] arr = wb.getSheets();
+			
+			for (Sheet sheet : arr) {
+				System.out.println(sheet.getName());
+			}
+			
+			Sheet sh = wb.getSheet(1);
+			
+			System.out.println(sh.getRows());
+			
+			System.out.println(sh.getColumns());
+			
+			Cell cell = sh.getCell(1, 2);
+			
+			System.out.println(cell);
+			
+			wb.close();
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

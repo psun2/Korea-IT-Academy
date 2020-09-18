@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_menu</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+
+.main{
+	width:200px;
+	margin:0 auto;
+}
+li{
+	list-style: none;	
+}
+
+.main > li{
+	width:180px;
+	height: 30px;
+	background: #0f0;
+	overflow: hidden;
+	border-top: 1px solid #000;
+}
+.main > li > div{
+	width:180px;
+	height: 30px;
+	background: #ff0;
+	line-height: 30px;
+}
+
+.main > li > ul{
+	width:150px;
+	height: 60px;
+}
+.main > li > ul > li{
+	width:150px;
+	height: 20px;
+	background: #f0f;
+	line-height: 20px;
+}
+
+</style>
+<script>
+window.onload=function(){
+	
+	function mmClk(){
+		
+	}
+	
+	var mm = document.getElementsByClassName("mm");
+	
+	for (var i = 0; i < mm.length; i++) {
+		mm[i].onclick = mmClk
+	}
+	
+	
+}
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<h1>06_menu</h1>
+
+<ul class="main">
+	
+	<li class="mm" cc=0>
+		<div>회사소개</div>
+		<ul>
+			
+			<li><a href="">인사말</a></li>
+			<li><a href="">연혁</a></li>
+			<li><a href="">오시는길</a></li>
+		</ul>
+	</li>
+	<li class="mm" cc=0>
+		<div>제품</div>
+		<ul>
+			
+			<li><a href="">TV</a></li>
+			<li><a href="">핸드폰</a></li>
+			<li><a href="">냉장고</a></li>
+		</ul>
+	</li>
+	<li class="mm" cc=0>
+		<div>갤러리</div>
+		<ul>
+			
+			<li><a href="">봄</a></li>
+			<li><a href="">여름</a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</li>
+	<li class="mm" cc=0>
+		<div>고객센터</div>
+		<ul>
+			
+			<li><a href="">공지사항</a></li>
+			<li><a href="">FnQ</a></li>
+			<li><a href="">QnA</a></li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

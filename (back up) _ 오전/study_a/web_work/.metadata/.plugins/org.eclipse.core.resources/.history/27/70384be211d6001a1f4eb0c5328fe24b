@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_date</title>
+</head>
+<body>
+<h1>03_date</h1>
+<script>
+	var today = new Date(1992,1-1,0,15,24,25)
+	document.write(today)
+	
+	
+	
+</script>
+</body>
+</html>

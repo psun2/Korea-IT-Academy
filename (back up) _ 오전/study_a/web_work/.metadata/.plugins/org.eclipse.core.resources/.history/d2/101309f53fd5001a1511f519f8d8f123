@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04_funcVar</title>
+</head>
+<body>
+<h1>04_funcVar</h1>
+<script>
+
+function fn_1(){
+	var a = 10;
+	b = 20;
+	document.write("fn_1() 시작  "+a+","+b+"<br>")
+	
+	document.write("fn_1() 끝  "+a+","+b+"<br>")
+}
+
+function fn_2(){
+	document.write("fn_2() 시작  "+a+","+b+"<br>")
+	
+	document.write("fn_2() 끝  "+a+","+b+"<br>")
+}
+
+function fn_3(){
+	document.write("fn_3() 시작  "+a+","+b+"<br>")
+	
+	document.write("fn_3() 끝  "+a+","+b+"<br>")
+}
+
+
+document.write("main: <br>")
+
+fn_1()
+fn_2()
+fn_3()
+
+document.write("main: <br>")
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_arr</title>
+</head>
+<body>
+<h1>01_arr</h1>
+<script>
+	var arr1 = [33,22,101,true, '정우성',33,456,1,101, 123.456]
+	
+	document.write("arr1:"+arr1+"<br>")
+	document.write("arr1[0]:"+arr1[0]+"<br>")
+	document.write("arr1[9]:"+arr1[9]+"<br>")
+	document.write("arr1[10]:"+arr1[10]+"<br>")
+	
+
+
+</script>
+
+
+</body>
+</html>

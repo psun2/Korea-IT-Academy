@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04_keyEvent</title>
+<script>
+window.onload=function(){
+	document.onkeydown=function(e){
+		
+		console.log(e.keyCode)
+		
+		
+	}
+}
+
+</script>
+
+</head>
+<body>
+<h1>04_keyEvent</h1>
+</body>
+</html>

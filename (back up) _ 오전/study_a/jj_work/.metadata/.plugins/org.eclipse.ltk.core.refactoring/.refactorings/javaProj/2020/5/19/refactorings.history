@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;excep_p.WhileExcepMain&apos; to &apos;ForExcepMain&apos;&#x0D;&#x0A;- Original project: &apos;javaProj&apos;&#x0D;&#x0A;- Original element: &apos;excep_p.WhileExcepMain&apos;&#x0D;&#x0A;- Renamed element: &apos;excep_p.ForExcepMain&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;WhileExcepMain&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;excep_p{WhileExcepMain.java[WhileExcepMain" matchStrategy="1" name="ForExcepMain" qualified="false" references="true" similarDeclarations="false" stamp="1588916832896" textual="false" version="1.0"/>
+</session>

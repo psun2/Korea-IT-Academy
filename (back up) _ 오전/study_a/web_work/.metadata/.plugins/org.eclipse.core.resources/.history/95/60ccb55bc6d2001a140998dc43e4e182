@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08_for</title>
+</head>
+<body>
+<h1>08_for</h1>
+<script>
+	for(var i=0; i<10; i++){
+		document.write("for 문이다 "+i+"<br>");
+	}
+</script>
+
+<div class="wrapper">
+	<div>박스여</div>
+
+
+</div>
+
+
+</body>
+</html>

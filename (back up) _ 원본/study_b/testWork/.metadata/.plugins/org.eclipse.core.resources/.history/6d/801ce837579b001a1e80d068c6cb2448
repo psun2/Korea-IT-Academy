@@ -1,0 +1,35 @@
+package oops;
+
+class Const{
+	
+	Const(){
+		System.out.println("기본 생성자");
+	}
+	
+	int a = initA();
+	static int b = initB();
+	
+	int initA() {
+		System.out.println("initA()");
+		return 10;
+	}
+	
+	static int initB() {
+		System.out.println("static initB()");
+		return 2000;
+	}
+}
+
+public class ConstructorMain {
+
+	public static void main(String[] args) {
+		System.out.println("---------------");
+		Const c1 = new Const();
+		System.out.println("---------------");
+		Const c2 = new Const();
+		System.out.println("---------------");
+		
+
+	}
+
+}

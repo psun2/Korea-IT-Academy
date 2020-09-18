@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04_if</title>
+<style>
+html, body{
+	width:100%;
+	height:100%;
+}
+*{
+	margin:0;
+	padding:0;
+}
+.wrapper{
+	/*margin:0 auto;*/
+	left: 50%;
+	top: 50%;
+	margin-left:-300px;
+	margin-top:-250px;
+	position: absolute;
+	width:600px;
+	height: 500px;
+	background: #f00;
+}
+header{
+	width:100%;
+	height: 100px;
+	background: #0ff;
+}
+section{
+	width:100%;
+	height: 300px;
+	background: #ff0;
+}
+footer{
+	width:100%;
+	height: 100px;
+	background: #0f0;
+}
+.logo{
+	width:400px;
+	height:70px;
+	background: #f0f;
+	margin:0 auto;
+	text-align: center;
+}
+.loginDiv{
+	width:500px;
+	height:30px;
+	background: #fee;
+	float:right;
+	
+}
+
+</style>
+<script>
+
+	var pid = ''
+</script>
+</head>
+<body>
+<h1>04_if</h1>
+<div class="wrapper">
+	<header>
+		<div class='logo'>로고</div>
+		<div class='loginDiv'>
+		<script>
+			if(pid) {
+		</script>
+				document.write('로그인 성공');
+		<script>
+			}else{
+				document.write('로그인 실패');
+			}
+		</script>
+		</div>
+	</header>
+	<section></section>
+	<footer></footer>
+</div>
+</body>
+</html>

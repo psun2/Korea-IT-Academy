@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09_diary</title>
+<style>
+	.wrapper{
+		width:300px;
+		
+	}
+
+</style>
+</head>
+<body>
+<h1>09_diary</h1>
+<div class="wrapper">
+	<div><img src="../fff/son1.jpeg" alt="" /></div>
+	<div></div>
+	<div></div>
+</div>
+</body>
+</html>

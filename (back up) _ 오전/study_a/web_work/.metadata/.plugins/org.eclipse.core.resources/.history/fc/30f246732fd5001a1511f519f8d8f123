@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_func</title>
+</head>
+<body>
+<h1>03_func</h1>
+<script>
+	function fn_1(){
+		document.write("fn_1() 실행<br>")
+	}
+	
+	fn_1()
+</script>
+</body>
+</html>

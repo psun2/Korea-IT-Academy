@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>11_activeMenu</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+.box{
+	width:100px;
+	height: 50px;
+	background: #ff0;
+	margin-left: 0px;
+	transition-duration: 0.5s;
+}
+.box:hover{
+	background: #f00;
+	width:500px;
+	/*height: 200px;
+	margin-left: 100px;*/
+
+}
+ul{
+	width: 300px;
+	margin: 0 auto;
+	
+}
+li{
+	list-style: none;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	background: #ff0;
+	overflow: hidden;
+	transition-duration: 0.5s;
+}
+li:hover{
+	background: #0f0;
+	
+}
+div{
+	width: 500px;
+	text-align: left;
+	margin-left: -500px;
+	transition-duration: 0.5s;
+}
+li:nth-of-type(2n) > div{
+	
+	text-align: right;
+	margin-left: 500px;
+}
+li:hover > div{
+	
+	margin-left: 0px;
+}
+li:nth-of-type(2n):hover > div{
+	
+	margin-left: -300px;
+}
+
+
+
+</style>
+</head>
+<body>
+<h1>11_activeMenu</h1>
+<div class="box" style="background: #f00"></div>
+<div class="box" style="background: #fa0"></div>
+<div class="box" style="background: #ff0"></div>
+<div class="box" style="background: #0f0"></div>
+<div class="box" style="background: #00f"></div>
+<div class="box" style="background: #20a"></div>
+<div class="box" style="background: #f0f"></div>
+<br>
+<ul>
+	<li>
+		회사소개
+		<div>
+			<a href="#">인사말</a>
+			<a href="#">인사개</a>
+			<a href="#">인사닭</a>
+		</div>
+	</li>
+	<li>
+		제품
+		<div>
+			<a href="#">니품</a>
+			<a href="#">내품</a>
+			<a href="#">그놈품</a>
+		</div>
+	</li>
+	<li>
+		갤러리
+		<div>
+			<a href="#">봄</a>
+			<a href="#">여름</a>
+			<a href="#">가을</a>
+		</div>
+	</li>
+	<li>
+		고객센터
+		<div>
+			<a href="#">공지사항</a>
+			<a href="#">자주찾는질문</a>
+			<a href="#">가끔찾는질문</a>
+		</div>
+	</li>
+
+
+
+</ul>
+
+
+</body>
+</html>

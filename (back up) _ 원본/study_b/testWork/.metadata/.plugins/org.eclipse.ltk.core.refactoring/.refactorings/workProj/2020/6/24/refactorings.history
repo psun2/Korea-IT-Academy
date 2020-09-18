@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ScannerFileMain.java&apos; to &apos;util_p.ScannerFileMain.java&apos;&#x0D;&#x0A;- Original project: &apos;workProj&apos;&#x0D;&#x0A;- Destination element: &apos;util_p.ScannerFileMain.java&apos;&#x0D;&#x0A;- Original element: &apos;util_p.ScannerFileMain.java&apos;" description="Copy compilation unit" destination="/src&lt;util_p{ScannerFileMain.java" element1="/src&lt;util_p{ScannerFileMain.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1591685810806" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,16 @@
+package control_p;
+
+public class If_Main {
+
+	public static void main(String[] args) {
+
+		if(true)   /// 조건의  참/거짓 여부에 따라 실행
+			System.out.println("참이지롱");  
+		     //실행 구간을 표시하지 않으면 실행 내용을 반드시 기재해야 한다
+
+		
+		System.out.println("난 누구?");
+		System.out.println("여긴 어디?");
+	}
+
+}

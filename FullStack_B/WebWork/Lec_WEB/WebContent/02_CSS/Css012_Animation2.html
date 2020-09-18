@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KeyFrame Animation</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* TODO */
+        animation: example 4s infinite linear;
+        /* animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: 3;
+        animation-timing-function: linear; */
+        position: relative;
+      }
+
+      /* TODO */
+      @keyframes example {
+        0% {
+          background-color: red;
+          left: 0;
+          top: 0;
+          transform: rotate(0) scale(0);
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0;
+          transform: rotate(72deg) scale(0.5);
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+          transform: rotate(144deg) scale(0);
+        }
+        75% {
+          background-color: green;
+          left: 0;
+          top: 200px;
+          transform: rotate(216deg) scale(1.5);
+        }
+        100% {
+          background-color: red;
+          left: 0;
+          top: 0;
+          transform: rotate(360deg) scale(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Key Frame Animation</h1>
+
+    <p><b>Note:</b> IE9 나 이전 버젼에서는 작동안합니다.</p>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>

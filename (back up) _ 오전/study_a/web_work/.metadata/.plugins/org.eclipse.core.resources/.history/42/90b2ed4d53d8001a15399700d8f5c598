@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_mouse</title>
+<style>
+img{
+	width:50px;
+	position: absolute;
+}
+
+</style>
+
+<script>
+window.onload = function(){
+	document.onmousemove=function(e){
+		console.log(e.pageX+","+e.pageY)
+	}
+}
+
+</script>
+</head>
+<body>
+<h1>02_mouse</h1>
+<img src="../fff/pointer.png" alt="" />
+</body>
+</html>

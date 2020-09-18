@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_form</title>
+<style>
+#con{
+
+	border:1px solid #000;
+	margin:20px;
+	padding:10px;
+}
+
+</style>
+<script>
+function ffGo(){
+	alert("들어왔다")
+}
+window.onload = function(){
+	function log(msg){
+		document.getElementById("con").innerHTML+=msg+"<br>"
+	}
+	
+	
+	//log("테스트")
+	log(frm.id.value)
+	document.frm.id.value = "bbb"
+	//log(hh.innerHTML)
+}
+
+</script>
+</head>
+<body>
+<h1 name="hh">02_form</h1>
+<form action="" name="frm">
+	<label for="">id<input type="text" name="id" value="aaa" onfocus="ffGo()" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+</form>
+
+<div id="con"></div>
+
+
+</body>
+</html>

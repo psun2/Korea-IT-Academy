@@ -1,0 +1,27 @@
+package jdbc_service;
+
+import java.util.ArrayList;
+
+import jdbc_p.MajorDAO;
+import jdbc_p.MajorDTO;
+
+public class MajorMain {
+
+	public static void main(String[] args) {
+		
+		//new MajorDAO().insert(new MajorDTO("tb", "화공"));
+		
+		ArrayList<MajorDTO> list = new ArrayList<MajorDTO>();
+		list.add(new MajorDTO("judo", "유도"));
+		list.add(new MajorDTO("taekwondo", "태권도"));
+		list.add(new MajorDTO("yeouido", "여의도"));
+		
+		new MajorDAO().insertList_2(list);
+		
+		for (MajorDTO dto : new MajorDAO().list()) {
+			System.out.println(dto);
+		}
+
+	}
+
+}

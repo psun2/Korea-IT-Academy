@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04_keyEvent</title>
+<style>
+div{
+	position: absolute;
+	width:50px;
+	height: 50px;
+	background: #ff0;
+	top:200px;
+	left: 400px;
+}
+
+</style>
+<script>
+window.onload=function(){
+	
+	var tt = 200
+	var ll = 400
+	
+	var div = document.getElementsByTagName("div")[0]
+	
+	document.onkeydown=function(e){
+		
+		switch(e.keyCode){
+		
+			case 39:
+				ll += 10
+				break
+			case 37:
+				ll -= 10
+				break
+			case 40:
+				tt += 10
+				break
+			case 38:
+				tt -= 10
+				break
+		}
+		div.style.left = ll+"px"
+		div.style.top = tt+"px"
+		
+	}
+}
+
+</script>
+
+</head>
+<body>
+<h1>04_keyEvent</h1>
+
+<div></div>
+
+</body>
+</html>

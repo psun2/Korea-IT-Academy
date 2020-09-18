@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07_while</title>
+</head>
+<body>
+<h1>07_while</h1>
+<script>
+	while(true){
+		document.write("while 문이다<br>");
+	}
+
+
+</script>
+</body>
+</html>

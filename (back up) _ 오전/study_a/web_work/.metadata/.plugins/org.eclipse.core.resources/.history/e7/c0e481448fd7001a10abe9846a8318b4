@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_menu</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+
+.main{
+	width:200px;
+	margin:0 auto;
+}
+
+</style>
+</head>
+<body>
+<h1>06_menu</h1>
+
+<ul class="main">
+	<div></div>
+	<li>
+		<ul>
+			<div></div>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			<div></div>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			<div></div>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			<div></div>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

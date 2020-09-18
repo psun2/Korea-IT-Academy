@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05_funcVar2</title>
+</head>
+<body>
+<h1>05_funcVar2</h1>
+<script>
+
+function order(menu, cnt){
+	var price = {
+		"아메리카노":2700,
+		"아시아노":3000,
+		"아프리카노":3200
+	}
+	
+	var tot = price[menu]*cnt
+	document.write(menu+":"+cnt+"("+tot+")")
+}
+
+order("아메리카노",3)
+
+</script>
+</body>
+</html>

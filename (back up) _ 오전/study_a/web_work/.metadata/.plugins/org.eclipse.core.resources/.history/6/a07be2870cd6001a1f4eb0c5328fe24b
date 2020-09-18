@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_string</title>
+</head>
+<body>
+<h1>02_string</h1>
+<script>
+	var tt = "aBcD EaG 코리아 IT 아카데미 Academy 123"
+	//        01234567890 1234567 89012345678901
+	document.write(tt+"<br>")
+	document.write(tt.length+"<br>")
+	document.write(tt[2]+"<br>")
+	document.write(tt[31]+"<br>")
+	document.write(tt[32]+"<br>")
+	document.write(tt.charAt(2)+"<br>")
+	document.write(tt.charAt(31)+"<br>")
+	document.write(tt.substring(2,7)+"<br>")
+	document.write(tt.substr(6,9)+"<br>")
+	document.write(tt.slice(2,7)+"<br>")
+	
+	document.write(tt.indexOf("a")+"<br>")
+	document.write(tt.indexOf("a",3)+"<br>")
+	document.write(tt.indexOf("a",10)+"<br>")
+	document.write(tt.indexOf("a",24)+"<br>")
+	document.write(tt.lastIndexOf("a")+"<br>")
+	
+	var fileName = "aaa.bbbbb.cc.ddddd.ee.txt"
+	
+	var pos = fileName.lastIndexOf(".")
+	var ext = fileName.substring(pos+1)
+	document.write(ext+"<br>")
+	
+	var arr = fileName.split(".")
+	console.log(arr)
+	
+	document.write(tt.toLowerCase()+"<br>")
+	document.write(tt.toUpperCase()+"<br>")
+	document.write(tt.replace("a","에이")+"<br>")
+	//document.write(tt.replaceAll("a","에이")+"<br>")
+	
+	var pname = ["이정민","이승원","이승환"]
+	document.write(pname.join("-")+"<br>") //join : 배열 -> 문자열
+	
+	document.write(tt.split("a").join("에이")+"<br>")
+	
+	
+	var sss = "여긴 참나무숲\n장수풍뎅이와\n사슴벌레가\n살지"
+	document.write(sss.split("\n").join("<br>")+"<br>")
+	
+	
+	var qqq = "     코리아 IT 아카데미     "
+	document.write(qqq.length+"<br>")
+	document.write(qqq.trim().length+"<br>")
+	
+	///주민번호를 가져와 생년월일, 성별, 국적을 출력하세요
+	
+	var jumin = "920320-3234567"
+	
+	var pp = eval(jumin[7])
+	document.write("성별:"+"여남"[pp%2]+"자<br>")
+	document.write("국적:"+"내외"[parseInt(pp/5)]+"국인<br>")
+	
+</script>
+</body>
+</html>

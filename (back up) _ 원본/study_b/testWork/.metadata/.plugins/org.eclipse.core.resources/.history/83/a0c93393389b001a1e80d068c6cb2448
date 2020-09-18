@@ -1,0 +1,16 @@
+package oops;
+
+public class RecursivePrimeNumberMain {
+	
+	static int primeChk(int i, int no) {
+		int res = 0;
+		
+		return res;
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println(primeChk(3,15));
+	}
+
+}

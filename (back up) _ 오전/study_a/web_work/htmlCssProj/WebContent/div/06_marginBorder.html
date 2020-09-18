@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_marginBorder</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+.tot{
+	width:1000px;
+	height: 400px;
+	background: #ff0;
+	margin: 10px;
+}
+.box{
+	width:100px;
+	height:100px;
+	background: #0f0;
+	float: left;
+}
+.mm1{
+	margin:30px;
+}
+
+.mm2{
+	margin: 50px 30px;
+}
+.mm3{
+	margin:50px 10px 30px 100px;
+}
+.mm4{
+	margin-top:50px;
+	margin-right: 10px;
+	margin-bottom:  30px;
+	margin-left:  100px;
+}
+
+.box1{
+	width:100px;
+	height:100px;
+	background: #0f0;
+	border:1px solid #000;
+	float: left;
+}
+.pp1{
+	padding:30px;
+}
+
+.pp2{
+	padding: 50px 30px;
+}
+.pp3{
+	padding:50px 10px 30px 100px;
+}
+.pp4{
+	padding-top:50px;
+	padding-right: 10px;
+	padding-bottom:  30px;
+	padding-left:  100px;
+}
+
+.box2{
+	width:100px;
+	height:100px;
+	background: #0f0;
+	margin: 20px;
+	float: left;
+}
+.bb1{
+	border: 10px solid #000;
+}
+
+.bb2{
+	/* border: 10px 20px solid #f00;*/
+	border-top: 20px solid #f00;
+	border-right: 40px solid #f0f;
+	border-bottom: 10px solid #00f;
+	border-left: 50px solid #0ff;
+}
+
+.bb3{
+	
+	border-top: 20px solid #f00;
+	border-right: 20px dotted #f0f;
+	border-bottom: 20px dashed #00f;
+	border-left: 20px double #0ff;
+}
+
+.bb4{
+	
+	border-top: 20px groove #f00;
+	border-right: 20px inset #f0f;
+	border-bottom: 20px ridge #00f;
+	border-left: 20px outset #0ff;
+}
+
+input{
+	width: 300px;
+	height:50px;
+	padding:20px;
+	border : 5px solid #0a0;
+	font-size: 20px;
+	
+	/*
+	border-top: 20px solid #f00;
+	border-right: 40px solid #f0f;
+	border-bottom: 10px solid #00f;
+	border-left: 50px solid #0ff;
+	*/
+}
+</style>
+
+</head>
+<body>
+<h1>06_marginBorder</h1>
+<div class="tot">
+	<div class="box mm1">마진1</div>
+	<div class="box mm2">마진2</div>
+	<div class="box mm3">마진3</div>
+	<div class="box mm4">마진4</div>
+</div>
+<div class="tot">
+	<div class="box1 pp1">패딩1</div>
+	<div class="box1 pp2">패딩2</div>
+	<div class="box1 pp3">패딩3</div>
+	<div class="box1 pp4">패딩4</div>
+</div>
+<div class="tot">
+	<div class="box2 bb1">보더1</div>
+	<div class="box2 bb2">보더2</div>
+	<div class="box2 bb3">보더3</div>
+	<div class="box2 bb4">보더4보더4보더4보더4보더4보더4보더4보더4보더4보더4보더4보더4</div>
+	<input>
+	<input type="radio">
+	<input type="checkbox">
+</div>
+
+
+
+
+</body>
+</html>

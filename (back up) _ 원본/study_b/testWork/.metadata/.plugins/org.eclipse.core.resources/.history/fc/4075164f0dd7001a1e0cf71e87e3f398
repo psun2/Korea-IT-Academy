@@ -1,0 +1,18 @@
+package jdbc_service;
+
+import jdbc_p.MajorDAO;
+import jdbc_p.MajorDTO;
+
+public class MajorMain {
+
+	public static void main(String[] args) {
+		
+		new MajorDAO().insert(new MajorDTO("tb", "È­°ø"));
+		
+		for (MajorDTO dto : new MajorDAO().list()) {
+			System.out.println(dto);
+		}
+
+	}
+
+}

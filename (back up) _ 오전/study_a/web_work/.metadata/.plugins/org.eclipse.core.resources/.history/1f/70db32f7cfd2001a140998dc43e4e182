@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09_diary</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.wrapper{
+		width:320px;
+		margin:0 auto;
+		
+	}
+	.wrapper > div{
+		width : 300px;
+		border: 1px solid #000;
+		padding: 10px;
+		text-align: center;
+	}
+	.wrapper > div:nth-of-type(3){
+		height: 250px;
+	}
+	img {
+		width : 300px;
+	}
+	.wrapper > div > div{
+		width : 20px;
+		height :20px;
+		border: 1px solid #000;
+		padding: 10px;
+		float: left;
+	}
+	.sat{
+		color:#00f;
+	}
+	.sun{
+		color:#f00;
+	}
+
+</style>
+</head>
+<body>
+<h1>09_diary</h1>
+<div class="wrapper">
+	<div><img src="../fff/son1.jpeg" alt="" /></div>
+	<div>
+		<h1>2020년 7월</h1>
+	</div>
+	<div>
+		<div>일</div>
+		<div>월</div>
+		<div>화</div>
+		<div>수</div>
+		<div>목</div>
+		<div>금</div>
+		<div>토</div>
+		<script>
+			for (var i = 0; i < 3; i++) {
+				document.write("<div></div>");		
+			}
+			
+			for (var i = 1; i <= 31; i++) {
+				
+				var cc = "";
+				/*
+				if(i%7==4)
+					cc = " class = 'sat' "
+				if(i%7==5)
+					cc = " class = 'sun' "
+				*/	
+					
+				document.write("<div "+cc+ ">"+i+"</div>");		
+			}
+		
+		</script>
+		
+	</div>
+	
+</div>
+</body>
+</html>

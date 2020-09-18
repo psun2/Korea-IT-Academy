@@ -1,0 +1,36 @@
+package control_p;
+
+public class If_Main {
+
+	public static void main(String[] args) {
+
+		if(true)   /// 조건의  참/거짓 여부에 따라 실행
+			System.out.println("참이지롱");  
+		     //실행 구간을 표시하지 않으면 실행 내용을 반드시 기재해야 한다
+			 //실행 구간을 표시하지 않으면 if문 코드의 바로 밑에 한 실행문만 적용됨
+		
+		if(false) {  //if문 시작
+			System.out.println("구간 참이지롱1");
+			System.out.println("구간 참이지롱2");
+			System.out.println("구간 참이지롱3");
+			System.out.println("구간 참이지롱4");
+		} //if문 끝
+		
+		
+		if(false) {  //if문 시작
+			//실행구문 내용이 없어도  error 가 발생되지 않음
+		} //if문 끝
+		
+		
+		int a = 10;
+		
+		if(false) {
+			a = 1234;
+		}
+		
+		
+		System.out.println("시스템 종료:"+a);
+		
+	}
+
+}

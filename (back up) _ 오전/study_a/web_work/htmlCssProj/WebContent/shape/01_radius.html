@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_radius</title>
+<style>
+
+	*{
+		margin:0;
+		padding:0;
+	}
+	h1, .tot{
+		clear: both;
+	}
+	
+	.box{
+		margin:30px;
+		width:100px;
+		height: 100px;
+		background: #f00;
+		float: left;
+	}
+
+	.box:nth-of-type(1){
+		border-radius: 20px;
+	}
+	.box:nth-of-type(2){
+		border-radius: 10px 40px;
+	}
+	.box:nth-of-type(3){
+		border-radius: 50px;
+	}
+	.box:nth-of-type(4){
+		border-radius: 10px 30px 20px 0px;
+	}
+	
+	
+	.tot:nth-of-type(2) > .box:nth-of-type(1){
+		opacity: 0.5;
+	}
+	
+	.tot:nth-of-type(2) > .box:nth-of-type(2){
+		background: rgb(255,0,0)
+	}
+	.tot:nth-of-type(2) > .box:nth-of-type(3){
+		background: rgba(255,0,0,0.5)
+	}
+	
+	
+	.tot:nth-of-type(3) > .box:nth-of-type(1){
+		background: -webkit-linear-gradient(left, 
+		rgba(255,0,0,1) 0%,
+		rgba(146,111,44,1) 22%,
+		rgba(96,161,64,0.17) 32%,
+		rgba(61,196,78,1) 39%,
+		rgba(7,252,101,1) 50%,
+		rgba(255,255,0,1) 100%);
+	}
+	
+	.tot:nth-of-type(4) > .box:nth-of-type(1){
+		box-shadow: 5px 30px 0px #000;	
+	}
+	.tot:nth-of-type(4) > .box:nth-of-type(2){
+		box-shadow: 10px 20px 10px #000;	
+	}
+	.tot:nth-of-type(4) > .box:nth-of-type(3){
+		background: #fff;
+		border-radius: 0px;
+		
+		box-shadow: 20px 0px 0px #f00,
+					0px 20px 0px #ff0,
+					-20px 0px 0px #00f,
+					0px -20px 0px #f0f,
+					
+					-20px -20px 0px #40a,
+					-20px 20px 0px #0f0,
+					20px 20px 0px #fa0,
+					20px -20px 0px #000;	
+	}
+	
+	.tot:nth-of-type(5) > .box{
+		border-radius: 0px;
+	}
+	
+	.tot:nth-of-type(5) > .box:nth-of-type(1){
+		box-shadow: inset 5px 10px 0px #000;	
+	}
+	.tot:nth-of-type(5) > .box:nth-of-type(2){
+		box-shadow: inset 5px 10px 5px #0f0;	
+	}
+	.tot:nth-of-type(5) > .box:nth-of-type(3){
+		box-sizing:border-box;
+		border: 10px solid #00f;
+	}
+	.tot:nth-of-type(5) > .box:nth-of-type(4){
+		box-sizing:border-box;
+		border-top: 10px solid #00f;
+	}
+	.tot:nth-of-type(5) > .box:nth-of-type(5){
+		box-sizing:border-box;
+		padding:20px;	
+	}
+	
+</style>
+</head>
+<body>
+
+<h1>01_radius</h1>
+<div class="tot">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+
+<h1>alpha</h1>
+<div class="tot">
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+</div>
+<h1>gradient</h1>
+<div class="tot">
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+</div>
+<h1>box-shadow</h1>
+<div class="tot">
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+</div>
+
+<h1>inset</h1>
+<div class="tot">
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+	<div class="box">난 box야</div>
+</div>
+
+
+
+</body>
+</html>

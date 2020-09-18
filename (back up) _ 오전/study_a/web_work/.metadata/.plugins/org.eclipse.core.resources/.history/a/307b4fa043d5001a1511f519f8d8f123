@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05_funcVar2</title>
+</head>
+<body>
+<h1>05_funcVar2</h1>
+<script>
+
+function order(menu, cnt){
+	var price = {
+			
+	}
+}
+
+order("아메리카노",3)
+
+</script>
+</body>
+</html>

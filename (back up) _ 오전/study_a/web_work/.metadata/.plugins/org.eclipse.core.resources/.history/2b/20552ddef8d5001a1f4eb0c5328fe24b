@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_string</title>
+</head>
+<body>
+<h1>02_string</h1>
+<script>
+	var tt = "aBcD EfG 코리아 IT 아카데미 Academy 123"
+	document.write(tt+"<br>")
+	document.write(tt.length+"<br>")
+	document.write(tt[2]+"<br>")
+	document.write(tt[31]+"<br>")
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05_if2</title>
+<script type="text/javascript">
+	var name = '정우성'
+	var age = 21
+	var go = ''
+	if(age >= 20){
+		go = '<a href="adult">성인회원가입</a>'
+	}else{
+		go = '<a href="minor">미성년자회원가입</a>'
+	}
+</script>
+</head>
+<body>
+<h1>05_if2</h1>
+
+<script>
+	document.write(go)
+</script>
+</body>
+</html>

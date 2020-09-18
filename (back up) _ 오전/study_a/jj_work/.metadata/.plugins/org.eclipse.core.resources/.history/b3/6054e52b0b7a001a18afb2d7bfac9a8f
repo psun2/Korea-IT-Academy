@@ -1,0 +1,32 @@
+package control_p;
+
+public class Switch_Main {
+
+	public static void main(String[] args) {
+
+		switch(7) {
+		
+			case 15:
+				System.out.println("15ม๖ที");
+				break;
+			case 5:
+				System.out.println("5ม๖ที");
+				break;
+			case 10:
+				System.out.println("10ภฬม๖ที");
+				break;
+			case 7:
+				System.out.println("7ภฬม๖ที");
+				break;
+		
+		}
+		
+		
+		switch(7) {
+		
+		
+		}
+
+	}
+
+}

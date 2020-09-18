@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_arr</title>
+</head>
+<body>
+<h1>01_arr</h1>
+<script>
+	var arr1 = [33,22,101,true, '정우성',33,456,1,101, 123.456]
+	
+	document.write("arr1:"+arr1+"<br>")
+	document.write("arr1[0]:"+arr1[0]+"<br>")
+	document.write("arr1[9]:"+arr1[9]+"<br>")
+	//document.write("arr1[10]:"+arr1[10]+"<br>")
+	document.write("arr1.length:"+arr1.length+"<br>")
+	
+	arr1[2] = 2222
+	arr1[10] = 9999 //입력가능
+	arr1[20] = 2468 //입력가능하나 중간 배열원소값 없음
+	document.write("arr1:"+arr1+"<br>")
+	document.write("arr1[2]:"+arr1[2]+"<br>")
+	document.write("arr1[10]:"+arr1[10]+"<br>")
+	document.write("arr1[20]:"+arr1[20]+"<br>")
+	document.write("arr1.length:"+arr1.length+"<br>")
+	
+	for(var i = 0; i<arr1.length; i++){
+		document.write("arr1["+i+"]:"+arr1[i]+"<br>")
+	}
+	
+	document.write("---------------------<br>")
+
+	for(var i in arr1){
+		document.write(i+":"+arr1[i]+"<br>")
+	}
+	document.write("---------------------<br>")
+	
+	arr1.push(100) //마지막 추가
+	document.write("arr1:"+arr1+"<br>")
+	var pp = arr1.pop() //마지막 빼기
+	document.write("arr1:"+arr1+"<br>")
+	document.write("pp:"+pp+"<br>")
+	pp = arr1.pop() //마지막 빼기
+	document.write("arr1:"+arr1+"<br>")
+	document.write("pp:"+pp+"<br>")
+	pp = arr1.pop() //마지막 빼기
+	document.write("arr1:"+arr1+"<br>")
+	document.write("pp:"+pp+"<br>")
+	
+	var a = arr1.indexOf(33)
+	document.write("a:"+a+"<br>")
+	a = arr1.lastIndexOf(33)
+	document.write("a:"+a+"<br>")
+	a = arr1.lastIndexOf(345678)
+	document.write("a:"+a+"<br>")
+	
+	var arr2 = arr1.slice(3,7)  // 3 -> 7-1
+	document.write("arr2:"+arr2+"<br>")
+	
+	var arr3 = arr1.reverse()
+	document.write("arr3:"+arr3+"<br>")
+	arr1.sort()
+	document.write("arr1:"+arr1+"<br>")
+</script>
+
+
+</body>
+</html>

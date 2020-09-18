@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_script</title>
+<style>
+	div{
+		width:100px;
+		height: 100px;
+		margin: 10px;
+		background: #ff0;
+		float: left;
+	}
+</style>
+</head>
+<body>
+<h1>01_script</h1>
+html구간 입니다. <br>
+<script>
+	//script 구간입니다. <br>
+	document.write("script 구간입니다 1.<br>");  //syso 와 비슷
+	document.write('script 구간입니다 2.<br>');
+	document.write('<div>script 1</div>');
+	document.write('<div>script 2</div>');
+	document.write('<div>script 3</div>');
+</script>
+	<div>html 1</div>
+	<div>html 2</div>
+	<div>html 3</div>
+<script>
+	//script 구간입니다. <br>
+	document.write("script 구간입니다 3.<br>");  //syso 와 비슷
+	document.write('script 구간입니다 4.<br>');
+	document.write('<div>script 4</div>');
+	document.write('<div>script 5</div>');
+	document.write('<div>script 6</div>');
+</script>
+
+</body>
+</html>

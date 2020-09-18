@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_mouse</title>
+<style>
+img{
+	width:50px;
+	position: absolute;
+	left:-100px;
+	top:-100px;
+	
+}
+html{
+	cursor: none;
+}
+div{
+	width:100px;
+	height: 100px;
+	position: absolute;
+	opacity: 0.5;
+}
+
+div:nth-of-type(1){
+	background: #ff0;
+	left:100px;
+	top:100px;
+}
+div:nth-of-type(2){
+	background: #f0f;
+	left:200px;
+	top:250px;
+}
+div:nth-of-type(3){
+	background: #0f0;
+	left:400px;
+	top:150px;
+}
+
+</style>
+
+<script>
+window.onload = function(){
+	
+	var cur = document.getElementsByTagName("img")[0]
+	var div = document.getElementsByTagName("div")
+	
+	now = null
+	
+	for (var i = 0; i < div.length; i++) {
+		div[i].onmousedown=function(e){
+			now = this
+			//console.log(this)
+			
+		}
+	}
+	
+	document.onmousemove=function(e){
+		//console.log(e.pageX+","+e.pageY)
+		
+		cur.style.left = e.pageX-20+"px"
+		cur.style.top = e.pageY+"px"
+		
+		now.style.left = e.pageX-20+"px"
+		now.style.top = e.pageY+"px"
+	}
+	
+	
+	document.onmousedown=function(e){
+		
+		cur.setAttribute('src','../fff/pb.png')
+		
+	}
+	document.onmouseup=function(e){
+		
+		cur.setAttribute('src','../fff/pw.png')
+		
+	}
+	
+}
+
+</script>
+</head>
+<body>
+<h1>02_mouse</h1>
+<img src="../fff/pw.png" alt="" />
+<div>1</div>
+<div>2</div>
+<div>3</div>
+
+
+
+
+</body>
+</html>

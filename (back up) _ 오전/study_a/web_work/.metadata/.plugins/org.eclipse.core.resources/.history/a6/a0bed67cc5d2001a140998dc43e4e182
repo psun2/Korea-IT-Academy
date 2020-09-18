@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07_while</title>
+</head>
+<body>
+<h1>07_while</h1>
+<script>
+
+	// 1-> 100 짝수들의 합
+	var i = 1
+	var tot = 0
+	while(i <= 100){
+		if(!(i%2)){
+			tot+=i
+			document.wrte("while 문이다 "+i+"<br>");
+		}
+		i++;
+	}
+	document.wrte("합계:"+tot+"<br>");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_string</title>
+</head>
+<body>
+<h1>02_string</h1>
+<script>
+	var tt = "aBcD EaG 코리아 IT 아카데미 Academy 123"
+	//        01234567890 1234567 89012345678901
+	document.write(tt+"<br>")
+	document.write(tt.length+"<br>")
+	document.write(tt[2]+"<br>")
+	document.write(tt[31]+"<br>")
+	document.write(tt[32]+"<br>")
+	document.write(tt.charAt(2)+"<br>")
+	document.write(tt.charAt(31)+"<br>")
+	document.write(tt.substring(2,7)+"<br>")
+	document.write(tt.substr(6,9)+"<br>")
+	document.write(tt.slice(2,7)+"<br>")
+	
+	document.write(tt.indexOf("a")+"<br>")
+	document.write(tt.indexOf("a")+"<br>")
+</script>
+</body>
+</html>

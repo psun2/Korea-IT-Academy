@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_date</title>
+</head>
+<body>
+<h1>03_date</h1>
+<script>
+
+
+	var today = new Date("2019-02-04")
+	document.write(today+"<br>")
+	document.write(today.getFullYear()+"<br>")
+	document.write(today.getMonth()+1+"<br>")
+	document.write(today.getDate()+"<br>")
+	document.write(today.getDay()+"<br>")
+	document.write(today.getHours()+"<br>")
+	document.write(today.getMinutes()+"<br>")
+	document.write(today.getSeconds()+"<br>")
+	document.write(today.getTime()+"<br>")
+	
+	
+	
+	
+	
+	
+	var lastDay = new Date(today.getFullYear(),today.getMonth()+1,0)
+	document.write(lastDay.getDate()+"<br>")
+	
+	function diaryChange(){
+		alert("바꿨냐?")
+	}
+	
+	
+</script>
+
+<form action="">
+	<select name="yy" id="" onchange="diaryChange()">
+	<script>
+		for (var i = 2020; i >1990; i--) {
+			document.write('<option value="">'+i+'</option>')
+		}
+	</script>
+	</select>
+	<select name="mm" id="" onchange="diaryChange()">
+		<script>
+			for (var i = 1; i<=12; i++) {
+				document.write('<option value="">'+i+'</option>')
+			}
+		</script>
+		
+	</select>
+	<select name="dd" id="">
+		<script>
+			for (var i = 1; i<=lastDay.getDate(); i++) {
+				document.write('<option value="">'+i+'</option>')
+			}
+		</script>
+	</select>
+</form>
+
+
+
+
+</body>
+</html>

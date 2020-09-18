@@ -1,0 +1,54 @@
+package oops_p;
+
+import java.util.Arrays;
+
+class Stud{
+	
+	String name;
+	
+	int [] jum;
+	
+	int tot;
+	
+	double avg;
+	
+	
+}
+
+public class StudMain {
+
+	public static void main(String[] args) {
+		Stud st1 = new Stud();
+		Stud st2 = new Stud();
+		Stud st3 = new Stud();
+		
+		st1.name = "이효리";
+		st1.jum = new int[]{77,79,71};
+		
+		st2.name = "삼효리";
+		st2.jum = new int[]{97,99,91};
+		
+		st3.name = "사효리";
+		st3.jum = new int[]{87,89,81};
+		
+		for (int j : st1.jum) {
+			st1.tot += j;
+		}
+		st1.avg = (double)st1.tot/st1.jum.length;
+		
+		System.out.println(st1.name);
+		System.out.println(Arrays.toString(st1.jum));
+		System.out.println(st1.tot);
+		System.out.println(st1.avg);
+		
+		System.out.println(st1);
+		Stud [] arr = {st1, st2, st3};
+		
+		
+		
+		
+
+	}
+
+}
+

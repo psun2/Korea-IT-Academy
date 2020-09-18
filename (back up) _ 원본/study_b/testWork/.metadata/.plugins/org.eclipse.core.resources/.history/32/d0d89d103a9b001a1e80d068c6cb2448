@@ -1,0 +1,22 @@
+package oops;
+
+public class RecursivePrimeNumberMain {
+	
+	static int primeChk(int i, int no) {
+		int res = 0;
+		
+		res = no%i;
+		if(i>2 && res!=0)
+			res = primeChk(i-1, no);
+		
+		System.out.println(i+":"+res);
+		return res;
+	}
+
+	public static void main(String[] args) {
+		
+		int res = primeChk(8,15);
+		System.out.println("main:"+res);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;InHeriShapeMain.java&apos; to &apos;workProj/src/dynamic_p&apos;&#x0D;&#x0A;- Original project: &apos;workProj&apos;&#x0D;&#x0A;- Destination element: &apos;workProj/src/dynamic_p&apos;&#x0D;&#x0A;- Original element: &apos;dynamic_p.InHeriShapeMain.java&apos;" description="Copy compilation unit" destination="/src&lt;dynamic_p" element1="/src&lt;dynamic_p{InHeriShapeMain.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1590151704739" units="1" version="1.0"/>
+</session>

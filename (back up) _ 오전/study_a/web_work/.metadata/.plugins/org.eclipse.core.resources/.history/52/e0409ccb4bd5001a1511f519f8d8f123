@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_selfCall</title>
+</head>
+<body>
+<h1>06_selfCall</h1>
+<script>
+	function fn(no){
+		
+		document.write("fn("+no+") 시작<br>")
+		if(no>0) 	 //조건
+			fn(no-1) //증감
+		document.write("fn("+no+") 끝<br>")
+	}
+
+	fn(5)  //함수호출 - 초기값
+</script>
+</body>
+</html>

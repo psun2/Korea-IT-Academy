@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_func</title>
+</head>
+<body>
+<h1>03_func</h1>
+<script>
+	function fn_1(){
+		document.write("fn_1() 실행<br>")
+	}
+	
+	function fn_2(aa,bb){
+		document.write("fn_2() 실행"+aa+","+bb+"<br>")
+	}
+	
+	function fn_3(){
+		document.write("fn_3() 실행<br>")
+		return 100
+	}
+	
+	function fn_4(aa,bb){
+		document.write("fn_4() 실행"+aa+","+bb+"<br>")
+		return 400
+	}
+	
+	var aa = function(aa,bb){
+		document.write("익명 실행"+aa+","+bb+"<br>")
+		return 1234
+	}
+	
+	var r1 = fn_1()
+	var r2 = fn_2(10,20)
+	var r3 = fn_3()
+	var r4 = fn_4(30,40)
+	var r5 = aa(50,60)
+	
+	document.write(r1+","+r2+","+r3+","+r4+","+r5+"<br>")
+	
+	var f1 = fn_1
+	var f2 = fn_2
+	var f3 = fn_3
+	var f4 = fn_4
+	var bb = aa
+	
+	var rr1 = f1()
+	var rr2 = f2(10,20)
+	var rr3 = f3()
+	var rr4 = f4(30,40)
+	var rr5 = bb(50,60)
+	
+	document.write(rr1+","+rr2+","+rr3+","+rr4+","+rr5+"<br>")
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+package kjy;
+
+abstract class DyCar{
+	String name;
+	int res;
+	
+	
+	
+	
+	public DyCar(String name) {
+	
+		this.name = name;
+		
+	}
+	//void calc() {}
+	
+	abstract void calc();
+	
+	void ppp() {
+		
+		calc();
+		String ttt = name+"\t"+res;
+		
+		System.out.println(ttt);
+	}
+}
+
+class DySports extends DyCar{
+	int [] jum;
+	DySports(int speed , int fuel, int design) {
+		super("½ºÆ÷Ã÷Ä«");
+		jum = new int[] {speed , fuel, design};
+	}
+	void calc() {
+		double [] rate = {0.5,0.3,0.2};
+		
+		res = 0;
+		
+		for (int i = 0; i < rate.length; i++) {
+			res += rate[i]*jum[i];
+		}
+	}
+}
+
+class DyTruck extends DyCar{
+	int [] jum;
+	DyTruck(int fuel, int loadage) {
+		super("Æ®·°"  );
+		jum = new int[] {fuel, loadage};
+	}
+	void calc() {
+		double [] rate = {0.6,0.4};
+		
+		res = 0;
+		
+		for (int i = 0; i < rate.length; i++) {
+			res += rate[i]*jum[i];
+		}
+	}
+}
+
+class DyVan extends DyCar{
+	int [] jum;
+	DyVan(int speed , int fuel, int cnt) {
+		super("½ÂÇÕÂ÷");
+		jum = new int[] {speed, fuel,  cnt};
+	}
+	void calc() {
+		double [] rate = {0.15,0.35,0.5};
+		
+		res = 0;
+		
+		for (int i = 0; i < rate.length; i++) {
+			res += rate[i]*jum[i];
+		}
+	}
+}
+
+
+
+public class DyCarMain {
+
+	public static void main(String[] args) {
+		DyCar [] cars = {
+				new DySports(60, 90, 91),
+				new DyTruck(40, 90),
+				new DyVan(60, 90, 91),
+				new DySports(90, 60, 51),
+				new DyVan(90, 60, 51),
+				new DyTruck(70, 50)
+				
+		};
+		
+		for (DyCar car : cars) {
+			car.ppp();
+		}
+		
+		
+
+	}
+
+}

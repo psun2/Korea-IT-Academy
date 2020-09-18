@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scriptProj</title>
+</head>
+<body>
+<h1>scriptProj</h1>
+<h2>first</h2>
+<a href="first/01_script.html">01_script</a>
+<a href="first/02_var.html">02_var</a>
+<a href="first/03_calc.html">03_calc</a>
+<a href="first/04_if.html">04_if</a>
+<a href="first/05_if2.html">05_if2</a>
+<a href="first/06_switch.html">06_switch</a>
+<a href="first/07_while.html">07_while</a>
+<a href="first/08_for.html">08_for</a>
+<a href="first/09_diary.html">09_diary</a>
+<h2>array</h2>
+<a href="array/01_arr.html">01_arr</a>
+<a href="array/02_keyArr.html">02_keyArr</a>
+<a href="array/03_func.html">03_func</a>
+<a href="array/04_funcVar.html">04_funcVar</a>
+<a href="array/05_funcVar2.html">05_funcVar2</a>
+<a href="array/06_selfCall.html">06_selfCall</a>
+<h2>func</h2>
+<a href="func/01_basic.html">01_basic</a>
+<a href="func/02_string.html">02_string</a>
+<a href="func/03_date.html">03_date</a>
+<h2>dom</h2>
+<a href="dom/01_dom.html">01_dom</a>
+<a href="dom/02_form.html">02_form</a>
+<a href="dom/03_date.html">03_date</a>
+</body>
+</html>

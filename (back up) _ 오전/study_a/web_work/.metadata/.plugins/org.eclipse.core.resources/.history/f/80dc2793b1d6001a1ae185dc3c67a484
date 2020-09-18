@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_dom</title>
+<style>
+	#con{
+		border: 1px solid #000;
+		margin: 20px;
+		padding: 10px;
+	}
+
+</style>
+</head>
+<body>
+<h1>01_dom</h1>
+<span id="a" knn="이정민">헬스하냐?</span>
+<p>
+	<span  id="b" knn="이승원">너두하냐?</span>
+</p>
+<div>
+	<p>문단</p>
+	<span  id="c" knn="차윤호">안하냐?</span>
+	<div class="yy" id="c" onn="박성훈">나두하자</div>
+</div>
+
+<div id="con"></div>
+<script>
+	var root = document.documentElement
+	
+	console.log(root)
+
+</script>
+
+</body>
+</html>

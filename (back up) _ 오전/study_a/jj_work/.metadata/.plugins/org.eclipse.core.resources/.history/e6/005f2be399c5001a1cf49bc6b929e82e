@@ -1,0 +1,25 @@
+package jdbc_p;
+
+import java.util.ArrayList;
+
+public class ExamMain {
+
+	public static void main(String[] args) {
+		
+		
+
+		for (ExamDTO dto: new ExamDAO().list()) {
+			System.out.println(dto);
+		}
+		
+		System.out.println("--------------------");
+		ArrayList<ExamDTO> arr = new ArrayList<ExamDTO>();
+		arr.add(new ExamDTO(13, "중간", "aaa", "2019-05-08", 62,64,68));
+		arr.add(new ExamDTO(14, "중간", "ccc", "2019-05-08", 52,54,58));
+		arr.add(new ExamDTO(15, "중간", "ddd", "2019-05-08", 92,94,98));
+		arr.add(new ExamDTO(16, "중간", "eee", "2019-05-08", 72,74,78));
+		new ExamDAO().insert_1(arr);
+
+	}
+
+}

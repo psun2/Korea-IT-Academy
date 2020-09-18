@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_script</title>
+</head>
+<body>
+<h1>01_script</h1>
+html구간 입니다. <br>
+<script>
+	//script 구간입니다. <br>
+	document.write("script 구간입니다 1.<br>");  //syso 와 비슷
+	document.write('script 구간입니다 2.<br>');
+</script>
+
+</body>
+</html>

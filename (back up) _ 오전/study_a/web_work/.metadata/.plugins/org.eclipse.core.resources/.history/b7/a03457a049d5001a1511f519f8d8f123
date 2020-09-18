@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05_funcVar2</title>
+<style>
+.box{
+	width:100px;
+	height: 100px;
+	border: 1px solid #000;
+	padding: 10px;
+	margin:10px;
+	float: left;
+}
+.yy{
+	background: #ff0;
+}	
+</style>
+</head>
+<body>
+<h1>05_funcVar2</h1>
+
+<script>
+var totHap = 0, cntHap = 0
+function order(menu, cnt){
+	var price = {
+		"아메리카노":2700,
+		"아시아노":3000,
+		"아프리카노":3200
+	}
+	
+	var tot = price[menu]*cnt
+	
+	totHap += tot
+	cntHap += cnt
+}
+
+function boxPPP(menu, tot, cnt){
+	var cc = ""
+		if(tot >=7000)
+			cc = " yy"
+		var ttt = '<div class="box'+cc+'">'
+			ttt += "<div>"+menu+"</div>"	
+			ttt += "<div>"+cnt+"</div>"	
+			ttt += "<div>"+tot+"</div>"	
+			ttt += "</div>"
+		document.write(ttt)
+}
+
+order("아프리카노",3)
+order("아메리카노",2)
+order("아시아노",3)
+order("아메리카노",1)
+order("아시아노",2)
+order("아프리카노",3)
+
+document.write("합계:"+cntHap+"("+totHap+")<br>")
+</script>
+
+
+
+
+
+</body>
+</html>

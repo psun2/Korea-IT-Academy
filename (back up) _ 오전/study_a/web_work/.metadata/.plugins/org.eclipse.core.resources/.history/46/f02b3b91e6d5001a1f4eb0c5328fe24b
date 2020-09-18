@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_basic</title>
+</head>
+<body>
+<h1>01_basic</h1>
+<script>
+//alert("경고\t창\n입니다.")
+var ii = prompt("1+1 ?")
+document.write("ii:"+ii+"<br>")
+</script>
+</body>
+</html>

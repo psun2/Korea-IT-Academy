@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04_mouse</title>
+<style>
+	.child .ad, img{
+		width:200px;
+		height: 300px;
+		float: left;
+		background: #ff0;
+		transition-duration:0.5s;
+	}
+	#wrap{
+		background:#0f0;
+		width:900px;
+		height: 1000px;
+	}
+	.child{
+		/*transform:rotate(45deg);*/
+		
+	}
+
+</style>
+<script>
+function ad1(){
+	//alert("눌렀냐?")
+	child[0].style.transform = 'rotate(45deg)'
+}
+
+
+
+window.onload=function(){
+	var ad = document.getElementsByClassName("ad")
+	child = document.getElementsByClassName("child")
+	
+	//console.log(ad)
+	ad[1].onclick=function(){
+		//alert("올렸냐?2")
+		//this.style.height= '500px';
+	}
+	
+	ad[2].onmouseover=function(){
+		//alert("올렸냐?3")
+		//ad[2].style.height= '500px';
+	}
+	
+	ad[3].addEventListener('click',function(){
+		//alert('리스너인감?')
+	},false);
+	
+}
+
+
+</script>
+</head>
+<body>
+<h1>04_mouse</h1>
+<div id="wrap">
+	<div class="ad" onclick="ad1()"><img src="../fff/son1.jpeg" alt="" /></div>
+	<div class="ad"><img src="../fff/son2.bmp" alt="" /></div>
+	<div class="ad"><img src="../fff/son3.png" alt="" /></div>
+	<div class="ad"><img src="../fff/son4.gif" alt="" /></div>
+	
+	
+	<!-- 1. 배경색, 2. box-shadow, 3.투명도  4. 90도 회전 -->
+	<div class="child"><img src="../fff/child1.jpg" alt="" /></div>
+	<div class="child"><img src="../fff/child2.jpg" alt="" /></div>
+	<div class="child"><img src="../fff/child3.jpg" alt="" /></div>
+	<div class="child"><img src="../fff/child4.jpg" alt="" /></div>
+	
+</div>
+</body>
+</html>

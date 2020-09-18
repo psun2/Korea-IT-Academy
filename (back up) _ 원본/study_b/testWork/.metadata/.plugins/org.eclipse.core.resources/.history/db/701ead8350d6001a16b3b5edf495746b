@@ -1,0 +1,24 @@
+package excel_p;
+
+import java.io.File;
+
+import jxl.Workbook;
+
+public class ReadMain {
+
+	public static void main(String[] args) {
+		try {
+			Workbook wb = Workbook.getWorkbook(new File("fff/www.xls"));
+			
+			System.out.println(wb.getNumberOfSheets());
+			
+			wb.close();
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

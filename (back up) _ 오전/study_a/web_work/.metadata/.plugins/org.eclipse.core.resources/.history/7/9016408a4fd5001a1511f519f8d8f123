@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_selfCall</title>
+</head>
+<body>
+<h1>06_selfCall</h1>
+<script>
+	var pre = ""
+	function fn(no){
+		
+		var res = 0
+		var myPre = pre
+		pre+="&nbsp;&nbsp;&nbsp;"
+		document.write(myPre+"fn("+no+","+res+") 시작<br>")
+		if(no>0) 	 //조건
+			res = no+fn(no-1) //증감
+		document.write(myPre+"fn("+no+","+res+") 끝<br>")
+		
+		return res
+		
+	}
+	
+	function even(no){
+		
+		var res = 0
+		no-=no%2
+		
+		if(no>0) 	 //조건
+			res = no+fn(no-2) //증감
+		
+		
+		return res
+		
+	}
+
+	document.write(fn(5))  //함수호출 - 초기값
+	
+	document.write(even(9))
+	
+	//2의 배수들의 합
+	
+	
+</script>
+</body>
+</html>

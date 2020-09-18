@@ -1,0 +1,33 @@
+package control_p;
+
+public class Switch_Exam {
+
+	public static void main(String[] args) {
+
+		String buseo = "부부";
+
+		String mt;
+		
+		switch(buseo) {
+		
+			case "인사부 ":
+				mt = "바다";
+				break;
+			case "영업부":
+				mt = "산";
+				break;
+			case "부부":
+				mt = "안방";
+				break;
+			case "두부":
+				mt = "콩밭";
+				break;
+			default:
+				mt = "잔업";
+				break;
+		}
+		
+		System.out.println(buseo+":"+mt);
+	}
+
+}

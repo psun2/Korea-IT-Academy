@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_string</title>
+</head>
+<body>
+<h1>02_string</h1>
+<script>
+	var tt = "aBcD EaG 코리아 IT 아카데미 Academy 123"
+	//        01234567890 1234567 89012345678901
+	document.write(tt+"<br>")
+	document.write(tt.length+"<br>")
+	document.write(tt[2]+"<br>")
+	document.write(tt[31]+"<br>")
+	document.write(tt[32]+"<br>")
+	document.write(tt.charAt(2)+"<br>")
+	document.write(tt.charAt(31)+"<br>")
+	document.write(tt.substring(2,7)+"<br>")
+	document.write(tt.substr(6,9)+"<br>")
+	document.write(tt.slice(2,7)+"<br>")
+	
+	document.write(tt.indexOf("a")+"<br>")
+	document.write(tt.indexOf("a",3)+"<br>")
+	document.write(tt.indexOf("a",10)+"<br>")
+	document.write(tt.indexOf("a",24)+"<br>")
+	document.write(tt.lastIndexOf("a")+"<br>")
+	
+	var fileName = "aaa.bbbbb.cc.ddddd.ee.txt"
+	
+	var pos = fileName.lastIndexOf(".")
+	var ext = fileName.substring(pos+1)
+	document.write(ext+"<br>")
+	
+	var arr = fileName.split(".")
+	console.log(arr)
+	
+	document.write(tt.toLowerCase()+"<br>")
+	document.write(tt.toUpperCase()+"<br>")
+	document.write(tt.replace("a","에이")+"<br>")
+	//document.write(tt.replaceAll("a","에이")+"<br>")
+	
+	var pname = ["이정민","이승원","이승환"]
+	document.write(pname.join("-")+"<br>") //join : 배열 -> 문자열
+	
+	arr = tt.split("a")
+	document.write(arr.join("에이")+"<br>")
+	
+</script>
+</body>
+</html>

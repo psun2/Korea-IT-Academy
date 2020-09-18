@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_form</title>
+<style>
+#con{
+
+	border:1px solid #000;
+	margin:20px;
+	padding:10px;
+}
+label{
+	display: block;
+	margin:10px;
+	padding:10px;
+}
+
+</style>
+<script>
+function ffGo(tt){
+	//alert("들어왔다")
+	//console.log(tt)
+	tt.style.background="#ff0"
+}
+
+function ffOut(tt){
+	
+	tt.style.background="#fff"
+}
+
+function log(msg){
+	document.getElementById("con").innerHTML+=msg+"<br>"
+}
+
+function genClk(tt){
+	
+	log("성별:"+tt.value)
+}
+
+function hoClk(){
+	
+	var ttt = ""
+	//console.log(frm.hobby.length)
+	console.log(document.getElementsByName("hobby").length)
+	for (var i = 0; i < document.getElementsByName("hobby").length; i++) {
+		//console.log(document.getElementsByName("hobby")[i])
+		console.log(i+":"+document.getElementsByName("hobby")[i].checked)
+		if(document.getElementsByName("hobby")[i].checked){
+			ttt+=document.getElementsByName("hobby")[i].value+","
+		}
+	}
+	//log("취미:"+frm.hobby.value)
+	log("취미:"+ttt)
+}
+
+function emailGo(){
+	
+	
+}
+
+window.onload = function(){
+	
+	
+	
+	//log("테스트")
+	log(frm.id.value)
+	document.frm.id.value = "bbb"
+	//log(hh.innerHTML)
+}
+
+</script>
+</head>
+<body>
+<h1 name="hh">02_form</h1>
+<form action="" name="frm">
+	<label for="">id<input type="text" name="id" value="aaa" 
+	onfocus="ffGo(this)" onblur="ffOut(this)" /></label>
+	<label for="">성별
+		<input type="radio" name="gender" value="m" onclick="genClk(this)"/>남
+		<input type="radio" name="gender" value="f" onclick="genClk(this)"/>여
+		<input type="radio" name="gender" value="it" onclick="genClk(this)"/>it인
+	</label>
+	<label for="">취미
+		<input type="checkbox" name="hobby" value="game" onclick="hoClk()" />게임
+		<input type="checkbox" name="hobby" value="fish" onclick="hoClk()" />낚시
+		<input type="checkbox" name="hobby" value="coding" onclick="hoClk()" />코딩
+	</label>
+	<label for="">email<input type="text" name="email1" />@
+		<select name="email2" onchange="emailGo()">
+			<option value="naver.com">네이버</option>
+			<option value="daum.net">다음</option>
+			<option value="google.com">구글</option>
+			<option value="jum.com">줌</option>
+			<option value="nate.com">네이트</option>
+		
+		</select>
+	</label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+	<label for=""><input type="text" name="" /></label>
+</form>
+
+<div id="con"></div>
+
+
+</body>
+</html>

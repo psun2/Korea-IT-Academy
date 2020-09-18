@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07_attr2</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding:0;
+}
+div{
+	width: 600px;
+	height: 50px;
+	border: 1px solid #000;
+	margin: 20px;
+}
+div[ttt-data=abc]{ /* 정확하게 일치 */
+	color:#f00;
+}
+div[ttt-data~=abc]{ /* 단어로 포함  ,(단어속 , -  포함내용은 배제, abc-qwe 배제) */
+	color:#0f0;
+}
+div[ttt-data|=abc]{/* 단어로 포함  , abc- 포함 , abc qwe 배제 */
+	background:#ff0;
+}
+div[ttt-data^=abc]{/* abc로시작  , abc로 시작하면 모두 포함 */
+	font-style: italic;
+}
+div[ttt-data$=yyy]{/* yyy로끝  , yyy로 끝나면 모두 포함 */
+	text-decoration: underline;
+}
+div[ttt-data*=abc]{/* abc를 포함한 모든 요소 */
+	text-decoration: line-through;
+}
+img{
+	width: 200px;
+	/*
+		jpg, jpeg : 테두리색 빨강
+		BMP, GIF : 테두리색 파랑
+		PNG : 테두리색 녹색
+	*/
+}
+
+img[src$=jpg] ,img[src$=jpeg]{
+	border: 10px solid #f00;
+}
+img[src$=bmp] ,img[src$=gif]{
+	border: 10px solid #00f;
+}
+img[src$=png]{
+	border: 10px solid #0f0;
+}
+
+</style>
+</head>
+<body>
+<h1>07_attr2</h1>
+<div ttt-data="abc">abc 다</div>
+<div ttt-data="eee">eee 다</div>
+<div ttt-data="kkabkk">kkabkk 다</div>
+<div ttt-data="abc qwe">abc qwe 다</div>
+<div ttt-data="abc-qwe">abc-qwe 다</div>
+<div ttt-data="zzzabcdefg">zzzabcdefg 다</div>
+<div ttt-data="zzzabcdefgyyy">zzzabcdefgyyy 다</div>
+<div ttt-data="abcdefgyyy">abcdefgyyy 다</div>
+
+<br>
+<img alt="" src="../mmm/ext/son1.jpeg">
+<img alt="" src="../mmm/ext/son2.bmp">
+<img alt="" src="../mmm/ext/son3.png">
+<img alt="" src="../mmm/ext/son4.gif">
+<img alt="" src="../mmm/ext/son5.jpg">
+
+</body>
+</html>

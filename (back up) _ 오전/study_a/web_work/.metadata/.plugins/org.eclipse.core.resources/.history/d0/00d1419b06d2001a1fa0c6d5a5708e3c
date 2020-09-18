@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_var</title>
+</head>
+<body>
+<h1>02_var</h1>
+<script>
+	var a = 10, b= 20
+	document.write('결과:'+(a+b))
+	
+	var name = '정우성'
+	var kor = 88, eng = 87, mat = 71
+	var tot = kor + eng + mat
+	var avg = tot / 3
+	
+	document.write('이름:'+name)
+	document.write('국어:'+kor)
+
+
+</script>
+</body>
+</html>

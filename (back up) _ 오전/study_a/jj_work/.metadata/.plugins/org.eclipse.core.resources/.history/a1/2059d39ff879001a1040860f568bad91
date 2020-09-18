@@ -1,0 +1,12 @@
+package control_p;
+
+public class If_Main {
+
+	public static void main(String[] args) {
+
+		if(false) 
+			System.out.println("ยüภฬม๖ที");
+
+	}
+
+}

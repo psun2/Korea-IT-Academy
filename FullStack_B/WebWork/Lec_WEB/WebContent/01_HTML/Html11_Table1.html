@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Table1</title>
+<style>
+table, th, td {
+	border: 1px solid black; /* 두께, 선종류, 선색상 */
+	border-collapse: collapse; /* 테두리(border) 간격 붙이기 */
+}
+
+table {
+	width: 100%;
+}
+
+th, td {
+	padding: 15px;
+}
+</style>
+</head>
+<!--
+HTML 문서에 '표' 를 나타내기 위한 태그로 <table> 제공
+다음 태그들과 같이 사용된다.
+<tr> : table row
+<td> : table data
+<th> : table header
+실제 내용을 담는 태그는 td, th 다.
+ 
+
+정렬관련 (td, th 에 적용)
+좌우 정렬: text-align
+세로 정렬: vertical-align
+ 
+ -->
+<body>
+
+	<table>
+		<tr>
+			<th>111</th>
+			<th>222</th>
+			<th>333</th>
+		</tr>
+		<!-- tr : 행 -->
+		<tr>
+			<!-- td : 열 -->
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<!-- <td>88</td>  -->
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+
+	</table>
+
+	<hr />
+	<hr />
+	<hr />
+
+	<table>
+
+		<thead>
+			<tr>
+				<th>111</th>
+				<th>222</th>
+				<th>333</th>
+			</tr>
+			<tr>
+				<th>444</th>
+				<th>555</th>
+				<th>666</th>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<!-- tr : 행 -->
+			<tr>
+				<!-- td : 열 -->
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<!-- <td>88</td>  -->
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+
+</body>
+</html>

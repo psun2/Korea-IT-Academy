@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>List2</title>
+
+<style>
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	padding: 20px 10px;
+	transition: background-color 2s esea-in-out;
+}
+
+ul {
+	width: 50%;
+	list-style: none;
+	background-color: #333333;
+	overflow: hidden;
+	margin: 0px auto;
+	padding: 0px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+	text-align: center;
+}
+
+li {
+	padding: 20px 10px;
+	margin-right: 10px;
+	color: white;
+}
+
+li:hover {
+	background-color: #111111;
+	color: yellowgreen;
+	font-size: 20px;
+}
+
+.box {
+	border-radius: 50%;
+	background-color: aqua;
+	width: 100px;
+	height: 100px;
+	animation : Animation 2s infinite esea-in-out;
+}
+
+@keyframes Animation {
+from { transform:none;
+	
+}
+
+to {
+	transform: scale(.5);
+}
+}
+</style>
+</head>
+<!-- 현재 웹에서 li, ol 태그는
+	메뉴 작성에 자주 사용됨
+ -->
+
+<body>
+
+	<ul>
+		<li><a href="https://www.google.com">구글</a></li>
+		<li><a href="https://www.naver.com">네이버</a></li>
+		<li><a href="https://www.daum.net">다음</a></li>
+	</ul>
+
+	<div class="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_form</title>
+</head>
+<body>
+<h1>01_form</h1>
+<form action="formReg.html">
+	<table border="">
+		<tr>
+			<td width=100><label for="ppp1" >id</label></td>
+			<td width=300>
+			<input id="ppp1" name="pid" 
+			type="text" size="8" maxlength="8"
+			placeholder="id를 입력하세요">
+			<input type="button" value="id중복확인">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="ppp2">이름</label></td>
+			<td><input id="ppp2" name="pname" value="이름이름"></td>
+		</tr>
+		<tr>
+			<td><label for="ppp3">PW</label></td>
+			<td><input id="ppp3" name="pw" type="password"></td>
+		</tr>
+		<tr>
+			<td><label for="ppp4">취미</label></td>
+			<td>
+				<input id="ppp4" name="hobby" type="checkbox" value="travel">여행
+				<input id="ppp4" name="hobby" type="checkbox" value="basket" checked="checked">농구
+				<input id="ppp4" name="hobby" type="checkbox" value="game">게임
+			</td>
+		</tr>
+		<tr>
+			<td><label for="ppp5">성별</label></td>
+			<td>
+				<input id="ppp5" name="gender" type="radio" value="m">남자
+				<input id="ppp5" name="gender" type="radio" value="f">여자
+				<input id="ppp5" name="gender" type="radio" value="a"  checked="checked">외계자
+			</td>
+		</tr>
+		<tr>
+			<td><label for="ppp6">파일</label></td>
+			<td>
+				<input id="ppp6" name="upfile" type="file">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="ppp7">가입일</label></td>
+			<td>
+				<input id="ppp7" name="regdate" type="date">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="ppp8">이메일</label></td>
+			<td>
+				<input id="ppp8" name="email1" >@
+				<select name="email2">
+					<option value="naver.com">네이버</option>
+					<option value="daum.net">다음</option>
+					<option value="nate.com" selected="selected">네이트</option>
+					<option value="google.com">구글</option>
+					<option value="zum.com">줌</option>
+				</select>
+			</td>
+		</tr>
+		
+		<tr>
+			<td><label for="ppp9">남기실 말</label></td>
+			<td>
+				<textarea id="ppp9" rows="7" cols="50" placeholder="남기실 개" name="content">
+				글을
+				남      겨     요
+				와 신난다</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="가입">
+				<input type="reset" value="초기화">
+			</td>
+		</tr>
+	</table>
+
+
+	
+	
+</form>
+	
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_overflowGall</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+img{
+	width:300px;
+	height:200px; 
+	display: block;
+	float: left;
+}
+
+
+.small2{
+	position:absolute;
+	width:300px;
+	height:217px;
+	background: #ff0;
+	overflow: hidden; 
+}
+.big{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:1200px;
+	height:200px;
+}
+.glass{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:300px;
+	height:217px;
+	
+}
+</style>
+<script>
+window.onload =function(){
+	
+	var last = 0
+	glass = document.getElementsByClassName("glass")[0]
+	big = document.getElementsByClassName("big")[0]	
+	
+	glass.onmousedown = function(e){
+		last = e.pageX
+		console.log("눌렀냐")
+	}
+	
+	glass.onmouseup = function(e){
+		if(e.pageX>last){
+			console.log("->")	
+		}else{
+			console.log("<-")
+		}
+		
+	}
+}
+
+
+</script>
+</head>
+<body>
+<h1>03_overflowGall</h1>
+
+
+<div class="small2">
+	<div class="big">
+		<img src="../fff/son4.gif">
+		<img src="../fff/child1.jpg">
+		<img src="../fff/son2.bmp">
+		<img src="../fff/child3.jpg">
+	</div>
+	<div class="glass"></div>
+</div>
+
+</body>
+</html>

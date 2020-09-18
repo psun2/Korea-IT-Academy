@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04_if</title>
+<style>
+.wrapper{
+	position: absolute;
+	width:600px;
+	height: 500px;
+	background: #f00;
+}
+
+</style>
+</head>
+<body>
+<h1>04_if</h1>
+<div class="wrapper">
+	<header></header>
+	<section></section>
+	<footer></footer>
+</div>
+</body>
+</html>

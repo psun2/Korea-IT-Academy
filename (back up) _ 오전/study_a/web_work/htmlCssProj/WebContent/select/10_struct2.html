@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10_struct2</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	
+	.box{
+		width:100px;
+		height:400px; 
+		float: left;
+		border: 1px solid #000;
+	}
+	div:nth-child(4){
+		background: #ff0;
+	}
+	.box > div:nth-child(3){
+		background: #0f0;
+	}
+	
+	div:nth-of-type(4){
+		color: #f00;
+	}
+	.box > div:nth-child(3){
+		background: #0f0;
+	}
+	
+
+</style>
+</head>
+<body>
+<h1>10_struct2</h1>
+<div class="box">
+	<div>1 div_1</div>
+	<span>1 span_1</span>
+	<div>1 div_2</div>
+	<div>1 div_3</div>
+	<span>1 span_2</span>
+	<div>1 div_4</div>
+	<div>1 div_5</div>
+</div>
+
+<div  class="box">
+	<div>2 div_1</div>
+	<div>2 div_2</div>
+	<div>2 div_3</div>
+	<span>2 span_1</span>
+	<div>2 div_4</div>
+	<div>2 div_5</div>
+</div>
+
+<div  class="box">
+	<div>3 div_1</div>
+	<div>3 div_2</div>
+	<div>3 div_3</div>
+	<div>3 div_4</div>
+	<div>3 div_5</div>
+</div>
+
+
+
+</body>
+</html>

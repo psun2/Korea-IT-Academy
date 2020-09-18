@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_switch</title>
+</head>
+<body>
+<h1>06_switch</h1>
+<script>
+
+	switch(789){
+		case 5:
+			document.write('5 인가')
+			break
+		case 10:
+			document.write('10 인가')
+			break
+		case 5:
+			document.write('5 이지롱')
+			break
+		case 10:
+			document.write('10 이지롱')
+			break
+		case true:
+			document.write('참 인가')
+			break
+		case 123.456:
+			document.write('소숫점 인가')
+			break
+		case '졸려':
+			document.write('졸림 인가')
+			break
+		default:
+			document.write('기본값 인가')
+			break
+	
+	}
+	
+	/* 
+		switch 사용하여
+		회원 학년이 1,4학년 : son_1
+		회원 학년이 2,6학년 : son_2
+		회원 학년이 3,5학년 : son_3
+		를 출력하세요
+	*/
+
+</script>
+</body>
+</html>

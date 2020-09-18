@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_calc</title>
+</head>
+<body>
+<h1>03_calc</h1>
+<script>
+document.write('<h2>1. 산술연산자</h2>')
+var a = 15, b = 7
+document.write(a+b+"<br>")
+document.write(a-b+"<br>")
+document.write(a*b+"<br>")
+document.write(a/b+"<br>")
+document.write(a%b+"<br>")
+a = '정우성'
+b = '현빈'
+document.write(a+b+"<br>")
+document.write(a-b+"<br>")
+document.write(a*b+"<br>")
+document.write(a/b+"<br>")
+document.write(a%b+"<br>")
+document.write('<h2>2. 증감연산자</h2>')
+a = 5
+document.write(a +"<br>")
+document.write(a++ +"<br>")
+document.write(++a +"<br>")
+document.write(a +"<br>")
+document.write(a-- +"<br>")
+document.write(--a +"<br>")
+//document.write(a +"<br>")
+//document.write(a** +"<br>")
+//document.write(**a +"<br>")
+document.write('<h2>3. 대입연산자</h2>')
+a = 5
+document.write(a +"<br>")
+document.write((a+=2) +"<br>")
+document.write((a-=3) +"<br>")
+document.write((a*=10) +"<br>")
+document.write((a/=5) +"<br>")
+document.write((a%=5) +"<br>")
+document.write('<h2>4. 비교연산자</h2>')
+a = 20,b = 20
+document.write(a+'>'+b+':'+(a > b) +"<br>")
+document.write(a+'>='+b+':'+(a >= b) +"<br>")
+document.write(a+'<='+b+':'+(a <= b) +"<br>")
+document.write(a+'<'+b+':'+(a < b) +"<br>")
+document.write(a+'=='+b+':'+(a == b) +"<br>")
+document.write(a+'!='+b+':'+(a != b) +"<br>")
+
+a = '정우성',b = '정좌성'
+document.write(a+'>'+b+':'+(a > b) +"<br>")
+document.write(a+'>='+b+':'+(a >= b) +"<br>")
+document.write(a+'<='+b+':'+(a <= b) +"<br>")
+document.write(a+'<'+b+':'+(a < b) +"<br>")
+document.write(a+'=='+b+':'+(a == b) +"<br>")
+document.write(a+'!='+b+':'+(a != b) +"<br>")
+
+document.write('<h2>5. 논리연산자</h2>')
+a = false,b = false
+document.write((a && b) +"<br>")
+document.write((a || b) +"<br>")
+document.write(!a +"<br>")
+
+a = 0,b = -100
+document.write((a && b) +"<br>")
+document.write((a || b) +"<br>")
+document.write(!a +"<br>")
+
+
+a = ' ',b = '이정민'
+document.write((a && b) +"<br>")
+document.write((a || b) +"<br>")
+document.write(!a +"<br>")
+
+document.write('<h2>6. 조건연산자</h2>')
+document.write( (false ? '참이여' : '거짓이지')+'<br>')
+</script>
+</body>
+</html>
