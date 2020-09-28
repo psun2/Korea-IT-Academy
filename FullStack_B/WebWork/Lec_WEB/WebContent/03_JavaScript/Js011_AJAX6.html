@@ -129,17 +129,18 @@ http://openapi.seoul.go.kr:8088/(인증키)/json/SPOP_DAILYSUM_JACHI/1/5/
         var table = createTableHead();
         var dateValue = date();
         var row = xmlDOM.getElementsByTagName('row');
-        var rowArr = Array.from(row);
-        rowArr.forEach((index) => {
-          var SIGNGU_CODE_SE = index.getElementsByTagName('SIGNGU_CODE_SE')[0]
+        var len = row.length;
+        for (var i = 0; i < len; i++) {
+          var SIGNGU_CODE_SE = row[i].getElementsByTagName('SIGNGU_CODE_SE')[0]
             .childNodes[0].nodeValue;
-          var TOT_LVPOP_CO = index.getElementsByTagName('TOT_LVPOP_CO')[0]
+          var TOT_LVPOP_CO = row[i].getElementsByTagName('TOT_LVPOP_CO')[0]
             .childNodes[0].nodeValue;
-          var DAIL_MXMM_MVMN_LVPOP_CO = index.getElementsByTagName(
+          var DAIL_MXMM_MVMN_LVPOP_CO = row[i].getElementsByTagName(
             'DAIL_MXMM_MVMN_LVPOP_CO',
           )[0].childNodes[0].nodeValue;
           table += `<tr><td>${dateValue}</td><td>${SIGNGU_CODE_SE}</td><td>${TOT_LVPOP_CO}</td><td>${DAIL_MXMM_MVMN_LVPOP_CO}</td></tr>`;
-        });
+        }
+
         document.getElementById('demoXML').innerHTML = table;
       }
 
@@ -148,13 +149,14 @@ http://openapi.seoul.go.kr:8088/(인증키)/json/SPOP_DAILYSUM_JACHI/1/5/
         var table = createTableHead();
         var dateValue = date();
         var parsed = JSON.parse(jsonText);
-        var objArr = Array.from(parsed.SPOP_DAILYSUM_JACHI.row);
-        objArr.forEach((index) => {
-          var SIGNGU_CODE_SE = index.SIGNGU_CODE_SE;
-          var TOT_LVPOP_CO = index.TOT_LVPOP_CO;
-          var DAIL_MXMM_MVMN_LVPOP_CO = index.DAIL_MXMM_MVMN_LVPOP_CO;
+        var objArr = parsed.SPOP_DAILYSUM_JACHI.row;
+        var len = objArr.length;
+        for (var i = 0; i < len; i++) {
+          var SIGNGU_CODE_SE = objArr[i].SIGNGU_CODE_SE;
+          var TOT_LVPOP_CO = objArr[i].TOT_LVPOP_CO;
+          var DAIL_MXMM_MVMN_LVPOP_CO = objArr[i].DAIL_MXMM_MVMN_LVPOP_CO;
           table += `<tr><td>${dateValue}</td><td>${SIGNGU_CODE_SE}</td><td>${TOT_LVPOP_CO}</td><td>${DAIL_MXMM_MVMN_LVPOP_CO}</td></tr>`;
-        });
+        }
 
         document.getElementById('demoJSON').innerHTML = table;
       }

@@ -40,20 +40,6 @@
       );
 
       return arr;
-
-    const second = (iterable) => {	
-      let arr = iterable.trim().split('');	
-
-      arr = arr.reduce((acc, cur, idx, src) => {	
-        if (cur === ' ') acc.push(cur);	
-        else if (src.indexOf(cur) === idx) acc.push(cur);	
-
-        return acc;	
-      }, []);	
-      console.log(arr);	
-    };	
-    second(document.getElementById('txt').value);
-
     }; // end function;
   </script>
 </html>

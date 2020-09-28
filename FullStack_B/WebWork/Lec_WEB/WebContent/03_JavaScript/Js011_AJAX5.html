@@ -97,20 +97,19 @@ http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/
       function parseXML(xmlDOM) {
         // TODO:
         var row = xmlDOM.getElementsByTagName('row');
-        var rowArr = Array.from(row);
         var table = `<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>`;
-        rowArr.forEach((index) => {
-          //   var data = index.children;
-          var statnTnm = index.getElementsByTagName('statnTnm')[0].childNodes[0]
-            .nodeValue;
-          var statnTid = index.getElementsByTagName('statnTid')[0].childNodes[0]
-            .nodeValue;
-          var subwayNm = index.getElementsByTagName('subwayNm')[0].childNodes[0]
-            .nodeValue;
-          var statnNmEng = index.getElementsByTagName('statnNmEng')[0]
+        var len = row.length;
+        for (var i = 0; i < len; i++) {
+          var statnTnm = row[i].getElementsByTagName('statnTnm')[0]
+            .childNodes[0].nodeValue;
+          var statnTid = row[i].getElementsByTagName('statnTid')[0]
+            .childNodes[0].nodeValue;
+          var subwayNm = row[i].getElementsByTagName('subwayNm')[0]
+            .childNodes[0].nodeValue;
+          var statnNmEng = row[i].getElementsByTagName('statnNmEng')[0]
             .childNodes[0].nodeValue;
           table += `<tr><td>${statnTnm}</td><td>${statnTid}</td><td>${subwayNm}</td><td>${statnNmEng}</td></tr>`;
-        });
+        }
         document.getElementById('demoXML').innerHTML = table;
       }
 
@@ -119,13 +118,15 @@ http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/
         var obj = JSON.parse(jsonText);
         var stationList = obj.stationList;
         var table = `<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>`;
-        stationList.forEach((index) => {
-          var statnTnm = index.statnTnm;
-          var statnTid = index.statnTid;
-          var subwayNm = index.subwayNm;
-          var statnNmEng = index.statnNmEng;
+        var len = stationList.length;
+        for (var i = 0; i < len; i++) {
+          var statnTnm = stationList[i].statnTnm;
+          var statnTid = stationList[i].statnTid;
+          var subwayNm = stationList[i].subwayNm;
+          var statnNmEng = stationList[i].statnNmEng;
           table += `<tr><td>${statnTnm}</td><td>${statnTid}</td><td>${subwayNm}</td><td>${statnNmEng}</td></tr>`;
-        });
+        }
+
         document.getElementById('demoJSON').innerHTML = table;
       }
     </script>

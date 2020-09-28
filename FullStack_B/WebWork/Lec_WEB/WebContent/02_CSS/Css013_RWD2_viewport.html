@@ -1,108 +1,117 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title>RWD viewport</title>
-<!-- 
-아래 두가지를 '모바일 이나 태블릿' 에서 확인해보자 
+  <head>
+    <meta charset="UTF-8" />
+    <title>RWD Grid View</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-1. viewport meta태그가 적용안된 페이지
-  https://www.w3schools.com/css/example_withoutviewport.htm
+    <style>
+      * {
+        box-sizing: border-box; /* RWD 필수! */
+      }
 
-2. viewport meta태그가 적용된 페이지
-  https://www.w3schools.com/css/example_withviewport.htm
+      .header {
+        border: 1px solid red;
+        padding: 15px;
+      }
 
-위 두 페이지의 효과를 보려면 꼭! 모바일에서 보기를 추천 (크롬의 device 에서도 체험하기 어렵다)
+      .clear {
+        clear: both;
+      }
 
-1.의 경우 필히 '확대' 및 '좌우 스크롤' 을 발생해야 할것이다.  
-사용자게게 있어 수직스크롤에 익숙하지만,
-수평스크롤은 매우 불편한 경험이다.
-페이지 내용을 보기 위해 '확대' 를 해야 하는 것도 사용자를 불편하게 하는 요소다
-	
-위 두페이지의 <body>는 동일하다 
-단 2. 에선 viewport meta 태그와
- img 의 경우 max-width:100%, height:auto 설정됨.
- -->
- 
-<!-- 
-	viewport : '웹페이지'에서 사용자게에 '보여지는 영역',
-		기기마다 다르다 (pc, 모바일, 태블릿)
-		
-	'큰 웹페이지' 를 '작은 기기'에서 보려하면..viewport 가 작아서 불편하다.
-	확대및 좌우 스크롤 발생 유발...  웹페이지 로딩후에 이러면 곤란...
-		
-	해결방법!
-	HTML5 에선 다음과 같이 <meta> 태그 에서 설정.
-	어떠한 사이즈의 기기에서도 일단. 웹페이지가 로딩될때 
-	viewport에 딱 맞게 zoom level 이 조정되도록 한다.
-	
-	★ 이는 Responsive Web Design 구현의 필수요소 입니다
- -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 향후 모든 웹페이지에 기본으로 이 옵션이 들어가게 템플릿 설정해두자 -->
+      /* class 값에 "col-" 를 가진 요소*/
+      [class*='col-'] {
+        float: left;
+        padding: 15px;
+        border: 1px solid red;
+      }
 
-<style>
-
-/* TODO */
-
-</style>
-
-</head>
-<!-- 
+      .col-1 {
+        width: 8.33%;
+      } /* 1칸짜리 폭 */
+      .col-2 {
+        width: 16.66%;
+      } /* 2칸짜리 폭 */
+      .col-3 {
+        width: 25%;
+      }
+      .col-4 {
+        width: 33.33%;
+      }
+      .col-5 {
+        width: 41.66%;
+      }
+      .col-6 {
+        width: 50%;
+      }
+      .col-7 {
+        width: 58.33%;
+      }
+      .col-8 {
+        width: 66.66%;
+      }
+      .col-9 {
+        width: 75%;
+      }
+      .col-10 {
+        width: 83.33%;
+      }
+      .col-11 {
+        width: 91.66%;
+      }
+      .col-12 {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <!-- 
 반응형 웹 (Responsive Web)
 - 모든종류의 기기 (PC, 태블릿, 모바일..) 마다 최적화된 레이아웃 제공
 - HTML & CSS 만으로 구현됨.
 - JavsScript 아님.
 
-반응형 웹 제작 단계
+반응형 웹 제작시 단계
 1. viewport 설정
 2. grid 설정
 3. box-sizing 설정
-
  -->
-<body>
+  <body>
+    <!-- TODO : class 지정하기 -->
+    <div class="header">
+      <h1>일본여행</h1>
+    </div>
 
-<!-- TODO : class 설정 -->
-<div>  
-	<h1>일본여행</h1>
-</div>
+    <div class="col-3">
+      <ul>
+        <li>항공편</li>
+        <li>도시</li>
+        <li>섬</li>
+        <li>음식</li>
+      </ul>
+    </div>
 
-<div>
-	<ul>
-		<li>항공편</li>
-		<li>도시</li>
-		<li>섬</li>
-		<li>음식</li>
-	</ul>
-</div>
+    <div class="col-9">
+      <h1>도시</h1>
+      <p>
+        도쿄 とうきょう tokyo 東京 요코하마 よこはま yokohama 横浜 나고야 なごや
+        nagoya 名古屋 오사카 おおさか osaka 大阪
+      </p>
+    </div>
 
-<div>
-	<h1>도시</h1>
-	<p>도쿄	とうきょう	tokyo	東京	
-	요코하마	よこはま	yokohama	横浜	
-	나고야	なごや	nagoya	名古屋	
-	오사카	おおさか	osaka	大阪</p>
-</div>
+    <div class="col-3">교토 きょうと kyoto 京都</div>
+    <div class="col-2">고베 こうべ kobe 神戸</div>
+    <div class="col-4">삿포로 さっぽろ sapporo 札幌</div>
+    <div class="col-3">센다이 せんだい sendai 仙台</div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</body>
+    <div class="clear"></div>
+
+    <div class="col-5">교토 きょうと kyoto 京都</div>
+    <div class="col-2">고베 こうべ kobe 神戸</div>
+
+    <div class="clear"></div>
+
+    <div class="col-4">삿포로 さっぽろ sapporo 札幌</div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
