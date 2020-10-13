@@ -23,7 +23,6 @@ public class ContextPath extends HttpServlet {
 			throws ServletException, IOException {
 
 		// URL: Uniform Resource Locator: 통합파일 식별자(?)
-
 		StringBuffer url = request.getRequestURL();
 
 		// URI Uniform Resource Identifier: 통합자원 식별자(?)
@@ -42,7 +41,7 @@ public class ContextPath extends HttpServlet {
 		// = getServletContext() // 걍 이렇게 해도 된다!
 
 		String servletContextName = context.getServletContextName();
-		
+
 		String path = request.getServletContext().getRealPath("/");
 
 		// ----------------------------------------------

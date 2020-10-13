@@ -27,6 +27,7 @@
 		<param-value>kwangju</param-value>
 	</context-param>
 
+	<!-- listener - context 의 life 등록 -->
 	<listener>
 		<listener-class>com.test.ex.MyListener</listener-class>
 	</listener>

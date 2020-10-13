@@ -13,12 +13,13 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!-- servlet 의 기본 parameter -->
+	<!-- 
 	<servlet>
 		<servlet-name>ServletInit</servlet-name>
 		<servlet-class>com.lec.servlet.InitServlet</servlet-class>
 
-		<!-- servlet 의 기본 parameter -->
-		<!-- <init-param>
+		<init-param>
 			<param-name>id</param-name>
 			<param-value>test</param-value>
 		</init-param>
@@ -29,11 +30,15 @@
 		<init-param>
 			<param-name>local</param-name>
 			<param-value>Seoul</param-value>
-		</init-param> -->
+		</init-param>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>ServletInit</servlet-name>
 		<url-pattern>/IS</url-pattern>
 	</servlet-mapping>
+	 -->
 </web-app>
+
+
+
