@@ -2,34 +2,63 @@
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.sql.*"%> <%-- JDBC 관련 클래스 import --%>
-
+	
 	<%
 		request.setCharacterEncoding("UTF-8");
 		String strUid = request.getParameter("uid");
+		String subject = request.getParameter("subject");
+		String content = request.getParameter("content");
 		
 		int uid = -1;
+		
 		try {
-			 uid = Integer.parseInt(strUid);			
+			uid = Integer.parseInt(strUid);
+		} catch(Exception e) {
+			e.printStackTrace();
+	%>
+		<script>
+			alert('접근 할 수 없습니다.');
+			history.back();
+		</script>
+	<%
+			return;
+		}
+		
+		if(uid == -1) {
+	%>
+		<script>
+			alert('접근 할 수 없습니다.');
+			history.back();
+		</script>
+	<%
+			return;
+		}
+		
+		String strPage = request.getParameter("page");
+		
+		int pageCnt = 10;
+		int pageNum = 1;
+		
+		if(strPage != null) {
+			try {
+				pageNum = Integer.parseInt(strPage);
 			} catch(Exception e) {
 				e.printStackTrace();
-		%>
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>
-		<%	
+	%>
+			<script>
+				alert('접근 할 수 없습니다.');
+				histroy.back();
+			</script>
+	<%
 				return;
 			}
-			
-			if(uid == -1) {
-		%>		
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>		
-		<%
-				return;
-			}
+		}
+		
+		int startPageNum = (pageNum - 1) * pageCnt  + 1;
+		int endPageNum = startPageNum + pageCnt - 1;
+		
+		System.out.println("startPageNum: " + startPageNum);
+		System.out.println("endPageNum: " + endPageNum);
 	%>
 	
 	<%!
@@ -51,7 +80,7 @@
 	<%!
 		// 쿼리문 준비
 		// ex) String sql_xxx = "INSERT INTO .....";
-		String sql = "DELETE FROM test_write WHERE wr_uid = ?";
+		String sql = "UPDATE test_write SET wr_subject = ?, wr_content = ? WHERE wr_uid = ?";
 	%>
 	
 	<%
@@ -64,7 +93,9 @@
 			
 			// 트랜잭션 실행
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, uid);
+			psmt.setString(1, subject);
+			psmt.setString(2, content);
+			psmt.setInt(3, uid);
 			cnt = psmt.executeUpdate();
 			
 		} catch(Exception e) {
@@ -79,12 +110,14 @@
 		}
 	
 	%>
+	
 	<script>
 		if(<%=cnt %> === 1) {
-			alert('삭제 성공');
-			location.href="list.jsp";
-		} else {
-			alert('삭제 성공');
-			history.back();			
+			alert('수정 성공');
+			location.href='view.jsp?uid=<%=uid %>&page=<%=pageNum %>';
+		} else {			
+			alert('수정 실패');
+			history.back();
 		}
+		
 	</script>

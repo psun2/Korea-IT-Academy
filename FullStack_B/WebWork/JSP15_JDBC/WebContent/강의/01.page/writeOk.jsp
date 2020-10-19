@@ -2,35 +2,28 @@
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.sql.*"%> <%-- JDBC 관련 클래스 import --%>
-
+	
 	<%
-		request.setCharacterEncoding("UTF-8");
-		String strUid = request.getParameter("uid");
+		request.setCharacterEncoding("UTF-8"); // POST, 한글인코딩 꼭!
 		
-		int uid = -1;
-		try {
-			 uid = Integer.parseInt(strUid);			
-			} catch(Exception e) {
-				e.printStackTrace();
-		%>
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>
-		<%	
-				return;
-			}
-			
-			if(uid == -1) {
-		%>		
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>		
-		<%
-				return;
-			}
+		// parameter 받기
+		String name = request.getParameter("name");
+		String subject = request.getParameter("subject");
+		String content = request.getParameter("content");
+		
+		// 유효성체크
+		// name, subject 가 null 이거나 빈 문자열이면 이전화면으로 돌아가기
+		if(name == null || name.trim().equals("") || subject == null || subject.trim().equals("")) {			
 	%>
+			<script>
+				alert('작성자 이름, 글제목을 입력하세요!!');
+				history.back();
+			</script>
+	<%
+			return; // 더이상 JSP 프로세싱 하지 않도록 여기서 종료
+		}
+	%>
+	
 	
 	<%!
 		//JDBC 관련 기본 객체 변수들 선언
@@ -51,7 +44,7 @@
 	<%!
 		// 쿼리문 준비
 		// ex) String sql_xxx = "INSERT INTO .....";
-		String sql = "DELETE FROM test_write WHERE wr_uid = ?";
+		final String SQL_WRITE_INSERT = "INSERT INTO TEST_WRITE (wr_uid, wr_subject, wr_content, wr_name) VALUES(test_write_seq.nextval, ?, ?, ?)";
 	%>
 	
 	<%
@@ -63,8 +56,11 @@
 			out.println("conn 성공<br />"); // 테스트 출력
 			
 			// 트랜잭션 실행
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, uid);
+			psmt = conn.prepareStatement(SQL_WRITE_INSERT);
+			psmt.setString(1, subject);
+			psmt.setString(2, content);
+			psmt.setString(3, name);
+			
 			cnt = psmt.executeUpdate();
 			
 		} catch(Exception e) {
@@ -79,12 +75,21 @@
 		}
 	
 	%>
-	<script>
-		if(<%=cnt %> === 1) {
-			alert('삭제 성공');
-			location.href="list.jsp";
+	
+	<%
+		if(cnt == 0) {
+	%>
+		<script>
+			alert('등록 실패');
+			location.back();
+		</script>
+	<%		
 		} else {
-			alert('삭제 성공');
-			history.back();			
+	%>
+		<script>
+			alert('등록성공, 리스트 출력합니다.');
+			location.href="list.jsp";
+		</script>
+	<%	
 		}
-	</script>
+	%>

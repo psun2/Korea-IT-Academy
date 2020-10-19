@@ -2,35 +2,6 @@
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.sql.*"%> <%-- JDBC 관련 클래스 import --%>
-
-	<%
-		request.setCharacterEncoding("UTF-8");
-		String strUid = request.getParameter("uid");
-		
-		int uid = -1;
-		try {
-			 uid = Integer.parseInt(strUid);			
-			} catch(Exception e) {
-				e.printStackTrace();
-		%>
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>
-		<%	
-				return;
-			}
-			
-			if(uid == -1) {
-		%>		
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>		
-		<%
-				return;
-			}
-	%>
 	
 	<%!
 		//JDBC 관련 기본 객체 변수들 선언
@@ -51,7 +22,6 @@
 	<%!
 		// 쿼리문 준비
 		// ex) String sql_xxx = "INSERT INTO .....";
-		String sql = "DELETE FROM test_write WHERE wr_uid = ?";
 	%>
 	
 	<%
@@ -63,9 +33,7 @@
 			out.println("conn 성공<br />"); // 테스트 출력
 			
 			// 트랜잭션 실행
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, uid);
-			cnt = psmt.executeUpdate();
+			// 
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -79,12 +47,3 @@
 		}
 	
 	%>
-	<script>
-		if(<%=cnt %> === 1) {
-			alert('삭제 성공');
-			location.href="list.jsp";
-		} else {
-			alert('삭제 성공');
-			history.back();			
-		}
-	</script>

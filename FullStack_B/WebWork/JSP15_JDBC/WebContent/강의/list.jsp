@@ -74,8 +74,8 @@
 		while(rs.next()) {
 		
 		int uid = rs.getInt("wr_uid");
-		String subject = rs.getString("wr_subject");
-		String name = rs.getString("wr_name");
+		String subject = rs.getString("wr_subject").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+		String name = rs.getString("wr_name").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 		int viewcnt = rs.getInt("wr_viewcnt");
 		
 		Date d = rs.getDate("wr_regdate");
@@ -89,7 +89,7 @@
 				
 		out.println("<tr>");
 		out.println("<td>"+uid+"</td>");
-		out.println("<td>"+subject+"</td>");
+		out.println("<td><a href='view.jsp?uid=" + uid + "'>"+subject+"</a></td>");
 		out.println("<td>"+name+"</td>");
 		out.println("<td>"+viewcnt+"</td>");
 		out.println("<td>"+regdate+"</td>");

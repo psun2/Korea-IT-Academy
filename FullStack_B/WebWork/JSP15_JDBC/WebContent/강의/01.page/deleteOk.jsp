@@ -2,34 +2,25 @@
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.sql.*"%> <%-- JDBC 관련 클래스 import --%>
-
-	<%
-		request.setCharacterEncoding("UTF-8");
-		String strUid = request.getParameter("uid");
+	
+	<% //parameter 받아오기
+		int uid = Integer.parseInt(request.getParameter("uid"));
 		
-		int uid = -1;
-		try {
-			 uid = Integer.parseInt(strUid);			
-			} catch(Exception e) {
+		int curPage = 1;
+		// 현재 몇 페이지 인지 parameter 가져오기 + 검증
+		String pageParam = request.getParameter("page");
+		
+		if(pageParam != null && !pageParam.trim().equals("")) {
+			try {
+				int p = Integer.parseInt(pageParam);
+				if(p > 0) curPage = p;
+			} catch(NumberFormatException e) {
+				// page parameter 관련 오류는 별도의 예외 처리 안함
+				// 안하면 default 가 1 인 상태로 있음... curPage
 				e.printStackTrace();
-		%>
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>
-		<%	
-				return;
 			}
-			
-			if(uid == -1) {
-		%>		
-				<script>
-					alert('접근할 수 없습니다.');
-					history.back();
-				</script>		
-		<%
-				return;
-			}
+		}
+		// 이단계에서 parameter 검증 필요
 	%>
 	
 	<%!
@@ -51,7 +42,7 @@
 	<%!
 		// 쿼리문 준비
 		// ex) String sql_xxx = "INSERT INTO .....";
-		String sql = "DELETE FROM test_write WHERE wr_uid = ?";
+		final String SQL_WRITE_DELETE_BY_UID = "DELETE FROM test_write WHERE wr_uid = ?";
 	%>
 	
 	<%
@@ -63,7 +54,7 @@
 			out.println("conn 성공<br />"); // 테스트 출력
 			
 			// 트랜잭션 실행
-			psmt = conn.prepareStatement(sql);
+			psmt = conn.prepareStatement(SQL_WRITE_DELETE_BY_UID);
 			psmt.setInt(1, uid);
 			cnt = psmt.executeUpdate();
 			
@@ -79,12 +70,21 @@
 		}
 	
 	%>
-	<script>
-		if(<%=cnt %> === 1) {
-			alert('삭제 성공');
-			location.href="list.jsp";
+	
+	<%
+		if(cnt == 0) {
+	%>
+		<script>
+			alert('삭제 실패');
+			history.back();
+		</script>
+	<%	
 		} else {
+	%>
+		<script>
 			alert('삭제 성공');
-			history.back();			
+			location.href='list.jsp?page=<%=curPage%>';
+		</script>
+	<%		
 		}
-	</script>
+	%>

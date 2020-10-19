@@ -42,6 +42,32 @@
 			return;
 		}
 		
+		String strPage = request.getParameter("page");
+		
+		int pageCnt = 10;
+		int pageNum = 1;
+		
+		if(strPage != null) {
+			try {
+				pageNum = Integer.parseInt(strPage);
+			} catch(Exception e) {
+				e.printStackTrace();
+	%>
+			<script>
+				alert('접근 할 수 없습니다.');
+				histroy.back();
+			</script>
+	<%
+				return;
+			}
+		}
+		
+		int startPageNum = (pageNum - 1) * pageCnt  + 1;
+		int endPageNum = startPageNum + pageCnt - 1;
+		
+		System.out.println("startPageNum: " + startPageNum);
+		System.out.println("endPageNum: " + endPageNum);
+		
 	%>
 	
 	<%!
@@ -154,6 +180,8 @@
 		<input type="hidden" value="<%=name %>" name="name" /><br />
 		제목: <input type="text" value="<%=subject %>" name="subject" /><br />
 		내용: <input type="text" value="<%=content %>" name="content" /><br />
+		
+		<input type="hidden" value="<%=pageNum %>" name="page" /><br />
 		<br /><br />
 		<input type="submit" value="수정" />
 	</form>

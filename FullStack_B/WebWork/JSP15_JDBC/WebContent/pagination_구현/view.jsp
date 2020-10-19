@@ -6,42 +6,69 @@
 
 	<%
 		request.setCharacterEncoding("UTF-8");
-		String strUid = request.getParameter("uid");
+		String strUid = null;
+		if(request.getParameter("uid") != null) 
+			strUid = request.getParameter("uid");
 		
 		if(strUid == null || strUid.equals("")) {
 	%>
 		<script>
-			alert('접근할 수 없습니다.');
-			history.back();
-		</script>
-	<%		
+			alert('접근 할 수 없습니다.');
+			histroy.back();
+		</script>		
+	<%	
 			return;
 		}
 		
 		int uid = -1;
 		try {
-		 uid = Integer.parseInt(strUid);			
+			uid = Integer.parseInt(strUid);
 		} catch(Exception e) {
 			e.printStackTrace();
 	%>
-			<script>
-				alert('접근할 수 없습니다.');
-				history.back();
-			</script>
+		<script>
+			alert('없는 게시물 번호 입니다.');
+			histroy.back();
+		</script>
 	<%	
 			return;
 		}
 		
 		if(uid == -1) {
-	%>		
-			<script>
-				alert('접근할 수 없습니다.');
-				history.back();
-			</script>		
-	<%
+	%>
+		<script>
+			alert('없는 게시물 번호 입니다.');
+			histroy.back();
+		</script>
+	<%				
 			return;
 		}
 		
+		String strPage = request.getParameter("page");
+		
+		int pageCnt = 10;
+		int pageNum = 1;
+		
+		if(strPage != null) {
+			try {
+				pageNum = Integer.parseInt(strPage);
+			} catch(Exception e) {
+				e.printStackTrace();
+	%>
+			<script>
+				alert('접근 할 수 없습니다.');
+				histroy.back();
+			</script>
+	<%
+				return;
+			}
+		}
+		
+		int startPageNum = (pageNum - 1) * pageCnt  + 1;
+		int endPageNum = startPageNum + pageCnt - 1;
+		
+		System.out.println("startPageNum: " + startPageNum);
+		System.out.println("endPageNum: " + endPageNum);
 	%>
 	
 	<%!
@@ -65,12 +92,12 @@
 		// ex) String sql_xxx = "INSERT INTO .....";
 		String sql = "SELECT * FROM test_write WHERE wr_uid = ?";
 		
-		
 		String subject = null;
 		String content = null;
 		String name = null;
 		int viewcnt = -1;
 		String regdate = null;
+		
 	%>
 	
 	<%
@@ -147,30 +174,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form id="form" action="updateOk.jsp" method="post" onsubmit="return chkSubmit();">
-		글번호: <input type="text" value="<%=uid %>" disabled /><br />
-		<input type="hidden" value="<%=uid %>" name="uid" /><br />
-		작성자: <input type="text" value="<%=name %>" disabled/><br />
-		<input type="hidden" value="<%=name %>" name="name" /><br />
-		제목: <input type="text" value="<%=subject %>" name="subject" /><br />
-		내용: <input type="text" value="<%=content %>" name="content" /><br />
-		<br /><br />
-		<input type="submit" value="수정" />
-	</form>
-	
-	<button onclick="history.back();">이전으로</button>
-	<button onclick="location.href='list.jsp';">목록보기</button>
+	<h2>읽기 <%=subject %></h2>
+	<br />
+	UID: <%=uid %><br />
+	작성자: <%=name %><br />
+	제목: <%=subject %><br />
+	날짜: <%=regdate %><br />
+	조회수: <%=viewcnt %><br />
+	내용 <br />
+	<hr />
+	<div>
+		<%=content %>
+	</div>
+	<hr />
+	<br />
+	<a href="update.jsp?uid=<%=uid%>&page=<%=pageNum %>">수정하기</a>
+	<a href="list.jsp?page=<%=pageNum %>">목록보기</a>
+	<button onclick="chkDelete();">삭제하기</button>
+	<a href="write.jsp">신규등록</a>
 	<script>
-		function chkSubmit() {
-			const form = document.forms['form'];
-			console.log(form);
+		function chkDelete() {
+			const userDeleteConfirm = confirm('정말로 삭제 하시겠습니까 ?');
 			
-			if(form['subject'].value.trim() === '') {
-				alert('제목을 입력해주세요.');
-				return false;
+			if(userDeleteConfirm) {
+				location.href='deleteOk.jsp?uid=<%=uid%>&page=<%=pageNum %>';
+				return;
 			}
 			
-			return true;
+			return;
 		}
 	</script>
 </body>

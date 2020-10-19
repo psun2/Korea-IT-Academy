@@ -30,6 +30,32 @@
 		<%
 				return;
 			}
+			
+			String strPage = request.getParameter("page");
+			
+			int pageCnt = 10;
+			int pageNum = 1;
+			
+			if(strPage != null) {
+				try {
+					pageNum = Integer.parseInt(strPage);
+				} catch(Exception e) {
+					e.printStackTrace();
+		%>
+				<script>
+					alert('접근 할 수 없습니다.');
+					histroy.back();
+				</script>
+		<%
+					return;
+				}
+			}
+			
+			int startPageNum = (pageNum - 1) * pageCnt  + 1;
+			int endPageNum = startPageNum + pageCnt - 1;
+			
+			System.out.println("startPageNum: " + startPageNum);
+			System.out.println("endPageNum: " + endPageNum);
 	%>
 	
 	<%!
@@ -82,7 +108,7 @@
 	<script>
 		if(<%=cnt %> === 1) {
 			alert('삭제 성공');
-			location.href="list.jsp";
+			location.href="list.jsp?page=<%=pageNum %>";
 		} else {
 			alert('삭제 성공');
 			history.back();			

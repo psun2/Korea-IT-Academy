@@ -1,14 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8"%>    
 <%@ page import="java.sql.*"%> <%-- JDBC 관련 클래스 import --%>
 <%@ page import="java.text.SimpleDateFormat"%>
 	
 	<% // parameter 받아오기
 		int uid = Integer.parseInt(request.getParameter("uid"));
-		// 이단계에서  parameter 검증 필요			
+		int curPage = 1;
+		// 이단계에서  parameter 검증 필요
+		// 현재 몇 페이지 인지 parameter 가져오기 + 검증
+		String pageParam = request.getParameter("page");
+		if(pageParam != null && !pageParam.trim().equals("")) {
+		try {
+			int p = Integer.parseInt(pageParam);
+			if(p > 0) curPage = p;
+		} catch(NumberFormatException e) {
+			// page parameter 관련 오류는 별도의 예외 처리 안함
+			// 안하면 default 가 1 인 상태로 있음... curPage
+			e.printStackTrace();
+		}
+	}
 	%>
-		
+	
 	<%!
 		//JDBC 관련 기본 객체 변수들 선언
 		Connection conn = null;
@@ -24,11 +36,13 @@
 		final String USERPW = "tiger_b";
 
 	%>
-	
+
 	<%!
 		// 쿼리문 준비
 		// ex) String sql_xxx = "INSERT INTO .....";
-				
+		final String SQL_WRITE_INC_VIEWCNT 
+			= "UPDATE test_write set wr_viewcnt = wr_viewcnt + 1 WHERE wr_uid = ?";
+		
 		final String SQL_WRITE_SELECT_BY_UID 
 			= "SELECT * FROM test_write WHERE wr_uid = ?";
 	%>
@@ -38,7 +52,7 @@
 		String content = "";
 		String regdate = "";
 		int viewcnt = 0;
-	%>	
+	%>
 	<%
 	
 		try {
@@ -47,7 +61,19 @@
 			conn = DriverManager.getConnection(URL, USERID, USERPW);
 			out.println("conn 성공<br />"); // 테스트 출력
 			
-			// 트랜잭션 실행
+			// 여러 쿼리문이 하나의 트랜잭션으로 실행
+			conn.setAutoCommit(false); // 여러 트랜 잭션을 실행하기 위하여 커밋되는 것을 방지
+			
+			// 쿼리(들) 실행
+			// TODO
+			// 1. 조회수 증가
+			psmt = conn.prepareStatement(SQL_WRITE_INC_VIEWCNT);
+			psmt.setInt(1, uid);
+			cnt = psmt.executeUpdate();
+			
+			psmt.close(); // psmt 닫기
+			
+			// 2. 글 읽어오기
 			psmt = conn.prepareStatement(SQL_WRITE_SELECT_BY_UID);
 			psmt.setInt(1, uid);
 			rs = psmt.executeQuery();
@@ -79,9 +105,12 @@
 				return; // 더이상 JSP 프로세싱 하지 않고 종료.
 			}
 			
+			conn.commit(); // 트랜잭션이 마무리 되면 commite 합니다.
 		} catch(Exception e) {
 			e.printStackTrace();
 			// 예외 처리를 하든지, 예외 페이지를 설정 해주어야 한다.
+			
+			conn.rollback(); // 트랜잭션 중간에 실패하면 rollback 합니다.
 		} finally {
 			// DB 리소스 해제
 			try{if(rs !=null && !rs.isClosed()) rs.close();}catch(Exception e2){e2.printStackTrace();}
@@ -94,38 +123,35 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>글수정 <%=subject %></title>
+	<meta charset="UTF-8">
+	<title>읽기 <%=subject %></title>
 </head>
-<script>
-	function chkSubmit() {
-		frm = document.forms['frm'];
-		
-		var subject = frm['subject'].value.trim();
-		
-		if(subject === '') {
-			alert('제목은 반드시 작성해야합니다');
-			frm['subject'].focus();
-			return false;
+	<script>
+		function chkDelete(uid) {
+			// 삭제 여부, 다시 확인하고 진행하기
+			var r = confirm('정말로 삭제 하시겠습니까?');
+			
+			if(r) location.href='deleteOk.jsp?uid=<%=uid%>&page=<%=curPage %>';
 		}
-		
-		return true;
-	}
-</script>
-<body>
-	<h2>글 수정</h2>
-	<form name="frm" action="updateOk.jsp" method="post" onsubmit="return chkSubmit();">
-		<input type="hidden" name="uid" value="<%=uid %>" />
-		작성자: <%=name %><br /> <%--작성자 이름은 변경 불가 --%>
-		<input type="hidden" name="name" value="<%=name %>" />
-		제목: <input type="text" name="subject" value="<%=subject %>" /><br />
-		내용: <textarea name="content"><%=content %></textarea>
-		<br /><br />
-		<input type="submit" value="수정" />
-	</form>
-	
-	<button onclick="history.back();">이전으로</button>
-	<button onclick="location.href='list.jsp';">목록보기</button>
+	</script>
+<body>	
+	<h2>읽기 <%=subject %></h2>
 	<br />
+	UID: <%=uid %><br />
+	작성자: <%=name %><br />
+	제목: <%=subject %><br />
+	날짜: <%=regdate %><br />
+	조회수: <%=viewcnt %><br />
+	내용 <br />
+	<hr />
+	<div>
+	<%=content %>
+	</div>
+	<hr />
+	<br />
+	<button onclick="location.href='update.jsp?uid=<%=uid%>'">수정하기</button>
+	<button onclick="location.href='list.jsp?page=<%=curPage %>'">목록보기</button>
+	<button onclick="chkDelete(<%=uid %>);">삭제하기</button>
+	<button onclick="location.href='write.jsp'">신규등록</button>
 </body>
 </html>
