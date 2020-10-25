@@ -35,5 +35,6 @@ ALTER TABLE tbl_student
 	REFERENCES tbl_department (dept_uid)
 ;
 
-SELECT * FROM TBL_STUDENT;
-SELECT * FROM TBL_DEPARTMENT;
+SELECT * FROM tbl_student;
+SELECT * FROM tbl_department;
+
