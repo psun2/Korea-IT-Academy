@@ -12,9 +12,11 @@ span { color: red;}
 <body>
 	<form action="writeOk">
 		uid(<span>숫자</span>): 
-		<input type="text" name="uid"> <br />
+		<input type="text" name="uid" value="${w.uid }"> <br />
 		작성자(<span>*</span>): 
-		<input type="text" name="name"> <br />
+		<input type="text" name="name" value="${w.name }"> <br />
+		글제목(<span>*</span>): 
+		<input type="text" name="subject" value="${w.subject }"> <br />
 		<input type="submit" value="등록"> <br />
 	</form>
 </body>

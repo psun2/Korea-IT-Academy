@@ -15,6 +15,7 @@ public class LoggerConfig {
 
 	@Bean
 	@Scope("singleton")
+//	@Order(100)
 	public Logger logger() {
 		return LoggerFactory.getLogger(Controller.class);
 	}
@@ -23,5 +24,6 @@ public class LoggerConfig {
 	public LoggerAspect loggerAspect() {
 		return new LoggerAspect();
 	}
+
 
 }
