@@ -61,8 +61,8 @@ public class BoardController {
 		return "board/deleteOk";
 	}
 	
-	// REST 게시판 작성
-	@GetMapping("/rest")
+	// REST 게시판 작성 
+	@RequestMapping(value = "/rest")
 	public void rest() {}
 	
 } // end controller

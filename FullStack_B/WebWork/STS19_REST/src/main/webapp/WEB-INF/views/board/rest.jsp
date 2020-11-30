@@ -8,11 +8,9 @@
 <title>REST+AJAX게시판</title>
 <!-- 스타일, js 라이브러리 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/common.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="../../CSS/common.css"/> 상대경로 적용 안됨 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/bb29575d31.js"></script>
 <script src="${pageContext.request.contextPath }/JS/board.js"></script>
-<!-- <script src="../../JS/board.js"></script> 상대경로 적용 안됨 -->
 </head>
 <body>
 
@@ -118,5 +116,3 @@
 
 </body>
 </html>
-
-

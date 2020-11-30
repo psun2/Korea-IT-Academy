@@ -19,7 +19,6 @@ public class WriteDTO {
 	private String name;
 	@JsonProperty("viewcnt")
 	private int viewCnt;
-	
 	@JsonProperty("regdate")
 	private Timestamp regDate;
 	

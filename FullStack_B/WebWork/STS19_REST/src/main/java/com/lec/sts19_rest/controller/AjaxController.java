@@ -3,8 +3,6 @@ package com.lec.sts19_rest.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,14 +16,10 @@ import com.lec.sts19_rest.domain.AjaxWriteResult;
 import com.lec.sts19_rest.domain.WriteDTO;
 import com.lec.sts19_rest.service.AjaxService;
 
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping("/board")
-@Slf4j
 public class AjaxController {
-
-
+	
 	@Autowired
 	AjaxService ajaxService;
 	
@@ -85,8 +79,6 @@ public class AjaxController {
 		result.setPageRows(pageRows);
 		result.setTotalCnt(totalCnt);
 		
-		System.out.println(result);
-		
 		return result;
 	}
 	
@@ -138,5 +130,22 @@ public class AjaxController {
 		return null;
 	}
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
