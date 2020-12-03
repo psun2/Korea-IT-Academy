@@ -1,7 +1,5 @@
 package com.lec.junit;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -41,11 +39,6 @@ class JunitTest2 {
 		log.info("create2");
 	}
 
-	@Test
-	static void create3() {
-		log.info("create3");
-	}
-
 	@BeforeAll // 반드시 static 이여야 합니다.
 	static void beforeAll() {
 		log.info("[beforeAll]");
@@ -62,7 +55,7 @@ class JunitTest2 {
 	}
 
 	@AfterEach
-	static void afterEach() {
+	void afterEach() {
 		log.info("after each");
 	}
 
